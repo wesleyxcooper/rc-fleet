@@ -1,3 +1,21 @@
+```
+ ★                                                                    ★ 
+  \                                                                   / 
+   \  ,;*##*|,                           :*##*;.                    
+    ,*@|;::;*@|                        ,#@;::;##,  ..               
+    **:*#.  .@@.  ...      ..          ;@*,   .   |@,     ...    ...
+     .|@*,:|##:,|#*|*#:  *@*|#*.        ;*@#|:. .*@#|; ,**|*@| :##|;
+     .@@;;;:, :@#.   @@ ;@|  ;@|          .:*@#. *@,   :;;|#@: #@,  
+     |@|      |@;   ;@|.#@.  *@:     ;*,    ,@@,,@*  :##:,:@# :@|   
+    ,@@,      .*#||**; ;@|*|#*:      .;*#**##|, :@#;.:##||#@:.#@.   
+     ..          ..   .@@. ..            ...      .    ..  .  ..    
+                      |@#                                           
+
+                                                                     ★
+                                                                    /
+                                                                   /
+```
+
 # rc-popstar
 
 Version-controlled build documentation for **Pop Star** — a custom HPI Stage-D10
@@ -12,6 +30,17 @@ plain text, git-diffable, outputs SVG/PNG/HTML/BOM automatically.
 
 > **Shopping list and build plan:** [`../shopping-list.md`](../shopping-list.md) — parts, prices (renderer-verified), body plan, and suspension notes.
 > This repo is the authoritative source for LED system wiring, connector assignments, and magnet contact interface design.
+
+### Logo assets
+
+| File | Description |
+|---|---|
+| [`assets/popstar-logo.png`](assets/popstar-logo.png) | "Pop Star" rendered in Barbie Medium at 120pt, black background |
+| [`assets/popstar-logo-trim.png`](assets/popstar-logo-trim.png) | Tight-cropped version used as ASCII art source |
+| [`assets/barbie-medium.ttf`](assets/barbie-medium.ttf) | Barbie Medium font — free for personal use ([fontmeme.com](https://fontmeme.com/fonts/barbie-medium-font/)) |
+| [`assets/generate-ascii-logo.py`](assets/generate-ascii-logo.py) | Script to regenerate the ASCII art header (requires ImageMagick + jp2a) |
+
+The shooting star accents (★ with diagonal tail) reference the Pop Star brand logo — a chrome shooting-star shape used as the car's identity.
 
 ---
 
