@@ -44,6 +44,15 @@ The shooting star accents (★ with diagonal tail) reference the Pop Star brand 
 
 ---
 
+## Body Color — BMW Individual Lila Metallic (0490)
+
+Magenta-purple pearl metallic. Code **0490 / BASF FE86-403X**. No verified digital hex
+for this BMW Individual color — visual reference: jewel-tone between hot pink and purple,
+shifts by viewing angle. Full paint guide including RC-specific options and graphic
+placement: [`docs/paint-guide.md`](docs/paint-guide.md).
+
+---
+
 ## LED System — Magnetic Contact Interface
 
 Pop Star uses a chassis-side LED harness that connects to the body shell magnetically.
