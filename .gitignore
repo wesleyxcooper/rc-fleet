@@ -1,0 +1,7 @@
+# WireViz rendered outputs (regen with: wireviz rc-popstar/harnesses/*.wv -o rc-popstar/output/)
+rc-popstar/output/*.png
+rc-popstar/output/*.tsv
+rc-popstar/output/*.gv
+
+# macOS
+.DS_Store

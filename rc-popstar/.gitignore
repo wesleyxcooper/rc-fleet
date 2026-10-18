@@ -1,0 +1,12 @@
+# Generated output — commit SVGs and HTML for GitHub viewing; ignore PNGs and raw DOT files
+output/*.png
+output/*.bom.tsv
+output/*.gv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store

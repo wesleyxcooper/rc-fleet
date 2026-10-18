@@ -1,0 +1,129 @@
+metadata:
+  project: RC Pop Star (HPI Stage-D10) — Body-Side Light Harness
+  description: >-
+    Body-shell wiring: magnetic contact interfaces at each corner route LED power
+    to headlight and tail/brake assemblies in the custom E36 cabriolet body.
+    Each IFACE_*_BODY mating pair consists of: satellite magnet (LED+ anode)
+    + body post magnet (GND cathode return). Current limiting via inline resistors:
+    headlights (white) = 100 ohm, tail/brake (red) = 150 ohm.
+    See docs/magnetic-contact-design.md for magnet spec and body-side install.
+
+# TODO:
+#   [ ] Model LED housing channels and satellite magnet pockets into Blender body
+#   [ ] Model 6.1mm x 3.1mm press-fit pocket into body underside at each corner
+#   [ ] Add GND return copper pad at each body post receiver seat
+#   [ ] Source 5mm warm white LEDs (headlights) and 5mm red LEDs (tail/brake)
+
+connectors:
+
+  IFACE_FL_BODY:
+    type: "Body magnetic interface — Front Left"
+    subtype: "Satellite magnet (LED+ anode) + body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_FL+ (6mm N52, North face down)"
+      - "POST_FL_GND (body post magnet, GND return)"
+    notes: "Mating chassis-side: IFACE_FL_CHS in chassis-harness.wv."
+
+  IFACE_FR_BODY:
+    type: "Body magnetic interface — Front Right"
+    subtype: "Satellite magnet (LED+ anode) + body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_FR+ (6mm N52, North face down)"
+      - "POST_FR_GND (body post magnet, GND return)"
+    notes: "Mating chassis-side: IFACE_FR_CHS in chassis-harness.wv."
+
+  IFACE_RL_BODY:
+    type: "Body magnetic interface — Rear Left"
+    subtype: "Satellite magnet (LED+ anode) + body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_RL+ (6mm N52, North face down)"
+      - "POST_RL_GND (body post magnet, GND return)"
+    notes: "Rear channel (brake simulation). Mating: IFACE_RL_CHS in chassis-harness.wv."
+
+  IFACE_RR_BODY:
+    type: "Body magnetic interface — Rear Right"
+    subtype: "Satellite magnet (LED+ anode) + body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_RR+ (6mm N52, North face down)"
+      - "POST_RR_GND (body post magnet, GND return)"
+    notes: "Rear channel (brake simulation). Mating: IFACE_RR_CHS in chassis-harness.wv."
+
+  LED_FL:
+    type: "5mm LED — Front Left headlight"
+    subtype: "Warm white T1-3/4, Vf 3.2V, If 20mA — E36 round housing"
+    pincount: 2
+    pinlabels: ["Anode (+)", "Cathode (-)"]
+    notes: "100 ohm 1/4W resistor inline on LED+ wire. Press-fit into 5mm bore."
+
+  LED_FR:
+    type: "5mm LED — Front Right headlight"
+    subtype: "Warm white T1-3/4, Vf 3.2V, If 20mA — E36 round housing"
+    pincount: 2
+    pinlabels: ["Anode (+)", "Cathode (-)"]
+    notes: "100 ohm 1/4W resistor inline on LED+ wire."
+
+  LED_RL:
+    type: "5mm LED — Rear Left tail/brake"
+    subtype: "Red T1-3/4, Vf 2.0V, If 20mA — E36 tail lamp housing"
+    pincount: 2
+    pinlabels: ["Anode (+)", "Cathode (-)"]
+    notes: "150 ohm 1/4W resistor inline. Brake simulation active on rear channel."
+
+  LED_RR:
+    type: "5mm LED — Rear Right tail/brake"
+    subtype: "Red T1-3/4, Vf 2.0V, If 20mA — E36 tail lamp housing"
+    pincount: 2
+    pinlabels: ["Anode (+)", "Cathode (-)"]
+    notes: "150 ohm 1/4W resistor inline."
+
+cables:
+
+  W_BODY_FL:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (via 100ohm R)", "GND"]
+    length: 0.18 m
+    notes: "FL satellite magnet to FL LED. 28 AWG fine-strand."
+
+  W_BODY_FR:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (via 100ohm R)", "GND"]
+    length: 0.18 m
+    notes: "FR satellite magnet to FR LED. 28 AWG fine-strand."
+
+  W_BODY_RL:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (via 150ohm R)", "GND"]
+    length: 0.15 m
+    notes: "RL satellite magnet to RL LED. 150 ohm for red LED (Vf 2.0V)."
+
+  W_BODY_RR:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (via 150ohm R)", "GND"]
+    length: 0.15 m
+    notes: "RR satellite magnet to RR LED."
+
+connections:
+
+  - - IFACE_FL_BODY: [1, 2]
+    - W_BODY_FL: [1, 2]
+    - LED_FL: [1, 2]
+
+  - - IFACE_FR_BODY: [1, 2]
+    - W_BODY_FR: [1, 2]
+    - LED_FR: [1, 2]
+
+  - - IFACE_RL_BODY: [1, 2]
+    - W_BODY_RL: [1, 2]
+    - LED_RL: [1, 2]
+
+  - - IFACE_RR_BODY: [1, 2]
+    - W_BODY_RR: [1, 2]
+    - LED_RR: [1, 2]

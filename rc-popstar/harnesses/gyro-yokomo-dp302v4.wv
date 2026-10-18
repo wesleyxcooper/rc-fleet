@@ -1,0 +1,184 @@
+metadata:
+  project: "RC Pop Star — Gyro Variant: Yokomo DP-302 V4"
+  description: >-
+    Channel map for the Yokomo DP-302 V4 gyro. More capable than the D-Box3 series:
+    4 selectable modes (Normal/ASSIST × Hard/Soft gain), SBUS-based dual gain control,
+    and an external LED status indicator output.
+
+    Verified from: teamyokomo.com/downloadfiles/.../DP-302V4_User_manual.pdf
+    (Scanned image PDF — read via Playwright browser screenshot, not pdftotext.)
+
+    Connection diagram from the manual (English side):
+      Receiver CH1 → gyro input (steering)
+      Receiver CH2 → gyro input (optional, dual-gain or 2-channel mode)
+      Receiver CH3 → gyro input (optional, 3-channel/SBUS mode)
+      BATT          → gyro power from receiver/BEC
+      Gyro output   → Servo
+      LED output    → external LED indicator
+
+    Dual gain (from manual): adjusted via gain channel of transmitter, "defaulted in S.BUS
+    Mode." On the R7FG, S.BUS is output on CH7. Range: −100% to 0 (Hard Mode, red LED)
+    and 0 to +100% (Soft Mode, green LED). Hard Mode recommended for most/beginners.
+
+    Channel map with this gyro:
+      CH1 (steering)  → DP-302 V4 CH1 + Killerbody 48102 CH1 (Y-cable)
+      CH2 (throttle)  → XD10 Pro ESC + Killerbody 48102 CH2 (Y-cable)
+      CH3 (VR knob)   → DP-302 V4 CH3 (optional — conflicts with R7FG default gyro CH3)
+                        See note below about R7FG CH3 reassignment.
+      CH4 (SwA)       → FREE
+      CH5 (SwB)       → FREE
+      CH6 (SwC/PPM)   → FREE
+      CH7 (SwD/SBUS)  → DP-302 V4 gain (via S.BUS on CH7)
+
+    R7FG CH3 conflict (from R7FG manual):
+      R7FG built-in gyro sensitivity defaults to CH3 (VR knob).
+      DP-302 V4 optionally uses CH3 as a 3rd gain channel.
+      Resolution: disable R7FG built-in gyro (factory default = OFF) and assign CH3
+      to the DP-302 V4 gain, OR leave CH3 unused and use CH7/SBUS for dual gain instead.
+
+    R7FG built-in gyro conflict:
+      Same as D-Box3 variants: leave R7FG gyro OFF (factory default). Two gyros on CH1
+      simultaneously = oscillation. From R7FG manual (radiolink.com/rc6gsv3_manual):
+      "Factory setting is gyro function OFF by default."
+
+    Specs from teamyokomo.com product page:
+      AMain p6011743 $75.99. 4 selectable modes. SW1: Normal/ASSIST. SW2: Normal/Reverse.
+
+# TODO:
+#   [ ] Decide: use CH3+CH7 for dual gain control, or just CH7/SBUS alone?
+#   [ ] Run END POINT (servo stroke) setup: hold SW + power on → rotate to limits
+#   [ ] Verify SW2 direction (Normal vs Reverse) with test steer before driving
+#   [ ] If CH3 used for DP-302 gain: set R7FG GYRO menu to STD mode to free CH3
+
+connectors:
+
+  R7FG_RX:
+    type: "Radiolink R7FG receiver"
+    subtype: "7-channel, 2.4GHz; CH7/SBUS used for DP-302 V4 dual gain"
+    pincount: 7
+    pinlabels:
+      - "CH1 SIG (steering)"
+      - "CH1 VCC (from XD10 BEC)"
+      - "CH1 GND"
+      - "CH2 SIG (throttle)"
+      - "CH2 GND"
+      - "CH3 SIG (optional: DP-302 gain or free)"
+      - "CH7/SBUS (S.BUS output for DP-302 dual gain)"
+    notes: >
+      R7FG manual: radiolink.com.cn/download/3edba11a28636d2f5f2f6002d04a92aa.pdf
+      R7FG built-in gyro = OFF (factory default) — must stay OFF with external gyro.
+      CH7 outputs S.BUS when S.BUS mode enabled (short press binding button once).
+      LED indicator: Green=PWM, Blue=SBUS, Red=Gyro mode, Purple=Gyro+SBUS.
+      BEC supply from XD10 Pro ESC.
+
+  XD10_ESC:
+    type: "Hobbywing XD10 Pro ESC"
+    subtype: "BEC 5–7.4V adjustable (item 1G), sensored brushless"
+    pincount: 3
+    pinlabels:
+      - "TH SIG (throttle, plugs into receiver TH=CH2)"
+      - "BEC VCC (5–7.4V out to receiver and servos)"
+      - "GND"
+    notes: >
+      Manual: hobbywing.com/en/uploads/file/20221012/7cb44bc6cf370ca8bb8ac96c29b6a7e3.pdf
+      BEC: "adjustable from 5V to 7.4V (step: 0.1V)" per features list.
+      Do NOT connect separate BEC to receiver.
+
+  GYRO_DP302V4:
+    type: "Yokomo DP-302 V4 drift gyro"
+    subtype: "4-mode: Normal/ASSIST × Hard/Soft gain. SBUS dual gain."
+    pincount: 6
+    pinlabels:
+      - "CH1 in (steering, from receiver via Y-cable)"
+      - "CH2 in (optional gain/2-ch mode)"
+      - "CH3 in (optional 3-ch gain — see R7FG CH3 conflict note)"
+      - "BATT (VCC/GND from receiver BEC)"
+      - "Servo out (corrected steering to servo)"
+      - "LED out (status LED, external)"
+    notes: >
+      Manual: teamyokomo.com/downloadfiles/.../DP-302V4_User_manual.pdf (scanned image PDF)
+      SW1: up=Normal, down=ASSIST (default=Normal).
+      SW2: Normal/Reverse servo direction.
+      Dual gain via S.BUS (CH7 on R7FG): −100%→0 = Hard Mode (red LED, beginners);
+      0→+100% = Soft Mode (green LED, expert). Hard Mode recommended to start.
+      LED status: Red fast flash=initializing; Green fast=signal loss; Red solid=Normal gain;
+      Green solid=AVCS gain; Yellow slow=stroke setting; Off=0% gain.
+
+  KB48102_LED:
+    type: "Killerbody 48102 LED control box"
+    subtype: "Reads CH1 steering (Y) + CH2 throttle (Y). Not all radios compatible."
+    pincount: 3
+    pinlabels:
+      - "CH1 in (steering sense, via Y-cable)"
+      - "CH2 in (throttle sense, via Y-cable)"
+      - "VCC/GND (from receiver BEC)"
+    notes: >
+      KB48102 instruction sheet: killerbodyrc.com/Prod_image/instructions/48102.PDF
+      Bench-test R7FG compatibility before permanent install.
+
+  SERVO_ST:
+    type: "Steering servo (driven by DP-302 V4 output)"
+    pincount: 3
+    pinlabels: ["SIG (from gyro)", "VCC", "GND"]
+
+cables:
+
+  W_CH1_Y:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["CH1 SIG", "VCC", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH1 → DP-302 V4 CH1 + Killerbody CH1."
+
+  W_CH2_Y:
+    wirecount: 2
+    colors: [WH, BK]
+    wirelabels: ["CH2 SIG", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH2 → XD10 ESC + Killerbody CH2."
+
+  W_ESC_TH:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["TH SIG", "BEC VCC", "GND"]
+    length: 0.2 m
+    notes: "XD10 Pro throttle + BEC cable to receiver CH2."
+
+  W_GYRO_SERVO:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["SIG (corrected)", "VCC", "GND"]
+    length: 0.15 m
+    notes: "DP-302 V4 servo output to steering servo."
+
+  W_CH7_SBUS:
+    wirecount: 1
+    colors: [OG]
+    wirelabels: ["SBUS (dual gain)"]
+    length: 0.2 m
+    notes: "CH7 S.BUS output from R7FG to DP-302 V4 CH3 input for dual gain control."
+
+connections:
+
+  - - XD10_ESC: [1, 2, 3]
+    - W_ESC_TH: [1, 2, 3]
+    - R7FG_RX: [4, 2, 5]
+
+  - - R7FG_RX: [1, 2, 3]
+    - W_CH1_Y: [1, 2, 3]
+    - GYRO_DP302V4: [1, 4, 4]
+
+  - - W_CH1_Y: [1, 2, 3]
+    - KB48102_LED: [1, 3, 3]
+
+  - - R7FG_RX: [4, 5]
+    - W_CH2_Y: [1, 2]
+    - KB48102_LED: [2, 3]
+
+  - - GYRO_DP302V4: [5, 4, 4]
+    - W_GYRO_SERVO: [1, 2, 3]
+    - SERVO_ST: [1, 2, 3]
+
+  - - R7FG_RX: [7]
+    - W_CH7_SBUS: [1]
+    - GYRO_DP302V4: [3]

@@ -1,0 +1,170 @@
+metadata:
+  project: RC Pop Star (HPI Stage-D10) — LED System Controller
+  description: >-
+    Killerbody 48102 LED control box wiring. The box reads TWO existing signals
+    via Y-cables — it does NOT use a spare channel.
+
+    CH1 Y-cable: Receiver CH1 splits to D-Box3 gyro input AND Killerbody CH1.
+    The box reads steering direction for left/right blinker activation.
+
+    CH2 Y-cable: Receiver CH2 splits to XD10 Pro ESC AND Killerbody CH2.
+    The box reads throttle for forward/brake/backward light states.
+
+    BEC supply: from XD10 Pro ESC (6V/7.4V to receiver and all servos).
+    DO NOT connect a separate BEC to the receiver — per XD10 Pro manual this
+    will damage the ESC.
+
+    Channel map for the RC6GS V3 / R7FG:
+      CH1 (steering)  → D-Box3 gyro + Killerbody CH1 (Y-cable)
+      CH2 (throttle)  → XD10 Pro ESC + Killerbody CH2 (Y-cable)
+      CH3 (aux knob)  → available (future: sound module throttle sense)
+      CH4 (aux)       → D-Box3 gyro gain control (optional)
+
+    Sources:
+      Killerbody 48102 instruction sheet: killerbodyrc.com/Prod_image/instructions/48102.PDF
+        "CH1 connects to the steering servo port (requires a Y-shaped cable),
+         CH2 connects to the receiver."
+      XD10 Pro manual: hobbywing.com/en/uploads/file/20221012/7cb44bc6cf370ca8bb8ac96c29b6a7e3.pdf
+        "The throttle control cable has an output voltage of 6V/7.4V to the receiver
+         and steering servo, hence, no separate battery can be connected to the
+         receiver. Otherwise, your ESC may be damaged."
+      D-Box3 manual: hpiracing.com/assets/documents/manuals/d_box3_gyro/161068_006_sg_dbox3_gyro_en.pdf
+
+# TODO:
+#   [ ] Confirm RC6GS V3 / R7FG compatibility with Killerbody 48102 control box
+#       (Killerbody warns "not all radio controller systems compatible")
+#   [ ] Verify that two Y-cables on receiver CH1 (gyro + LED box) do not cause
+#       signal issues on the R7FG — bench test before final install
+#   [ ] Determine XD10 Pro BEC voltage setting: 6V or 7.4V
+#       Set based on servo specs — HPI servo documentation needed
+#   [ ] Confirm Killerbody 48102 contains the Y-cables in the kit
+#       (Wheelspin Models guide says Y-cables are included)
+
+connectors:
+
+  RECEIVER:
+    type: "Radiolink R7FG receiver"
+    subtype: "7-channel, 2.4GHz, splash-proof, gyro-integrated"
+    pincount: 5
+    pinlabels:
+      - "CH1 SIG (steering)"
+      - "CH1 VCC (from ESC BEC)"
+      - "CH1 GND"
+      - "CH2 SIG (throttle)"
+      - "CH2 GND"
+    notes: >
+      Amazon B07DPNNTWT $75.99. Standard 3-pin servo connectors on all channels.
+      BEC supply to receiver comes from XD10 Pro ESC (6V or 7.4V) — do NOT
+      add external BEC. Radiolink manual: radiolink.com/rc6gsv3_manual
+
+  XD10_ESC:
+    type: "Hobbywing XD10 Pro ESC"
+    subtype: "Drift ESC with sensored brushless support + BEC 6V/7.4V"
+    pincount: 3
+    pinlabels:
+      - "TH SIG (throttle, from receiver CH2)"
+      - "VCC (BEC out to receiver/servos)"
+      - "GND"
+    notes: >
+      AMain p6050085 $159.99. Manual: hobbywing.com/en/uploads/file/20221012/7cb44bc6cf370ca8bb8ac96c29b6a7e3.pdf
+      ESC throttle cable plugs into receiver TH (CH2). BEC supplies receiver and servos.
+      No separate battery/BEC on the receiver — will damage ESC.
+
+  GYRO_D_BOX3:
+    type: "HPI D-Box3 Lite (161068) or Pro (161069) drift gyro"
+    subtype: "Inline between receiver CH1 and steering servo"
+    pincount: 4
+    pinlabels:
+      - "CH1 in (from receiver, via Y-cable)"
+      - "Servo out (to steering servo)"
+      - "CH4 in (remote gain, optional)"
+      - "VCC/GND (from receiver BEC)"
+    notes: >
+      Manual: hpiracing.com/assets/documents/manuals/d_box3_gyro/161068_006_sg_dbox3_gyro_en.pdf
+      3-pin steering lead → receiver CH1 (after Y-split).
+      Single-wire lead → CH4 for remote gain (optional).
+      Gyro sits inline: CH1 receiver → gyro → steering servo.
+
+  LED_CTRL:
+    type: "Killerbody 48102 LED Control Box"
+    subtype: "12-LED controller, reads CH1 steering + CH2 throttle via Y-cables"
+    pincount: 4
+    pinlabels:
+      - "CH1 in (steering sense, via Y-cable)"
+      - "CH2 in (throttle/ESC sense, via Y-cable)"
+      - "LED outputs (ports 1/2/3/4/5/6/L/R)"
+      - "VCC/GND (from receiver BEC)"
+    notes: >
+      AMain p1302144 $16.99. Instruction sheet: killerbodyrc.com/Prod_image/instructions/48102.PDF
+      CH1 (steering): reads direction for blinker (L/R port) activation.
+      CH2 (throttle): reads forward/brake/reverse for headlight/tail states.
+      LED ports: 1/2/3/4 = FORWARD (white); 5/6 = BACKWARD (red); L/R = TURN (yellow).
+      Requires two Y-cables — included in kit per Wheelspin Models guide.
+      Not compatible with all radio systems — test with R7FG before committing to install.
+
+  SERVO_STEERING:
+    type: "Steering servo"
+    subtype: "Driven by D-Box3 gyro output"
+    pincount: 3
+    pinlabels:
+      - "SIG (from gyro output)"
+      - "VCC (from ESC BEC)"
+      - "GND"
+    notes: >
+      Servo receives corrected steering signal from D-Box3 gyro output (not directly from receiver CH1).
+      HPI SX-12MGLP (#161067) or compatible — verify with HPI for D10 spec.
+
+cables:
+
+  W_CH1_Y:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["CH1 SIG", "VCC", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH1 splits to gyro CH1 input and Killerbody LED box CH1."
+
+  W_CH2_Y:
+    wirecount: 2
+    colors: [WH, BK]
+    wirelabels: ["CH2 SIG", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH2 splits to XD10 Pro ESC and Killerbody LED box CH2."
+
+  W_ESC_THROT:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["TH SIG", "BEC VCC", "GND"]
+    length: 0.2 m
+    notes: "XD10 Pro throttle cable to receiver TH (CH2). BEC powers receiver through this cable."
+
+  W_GYRO_SERVO:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["SIG (corrected)", "VCC", "GND"]
+    length: 0.15 m
+    notes: "D-Box3 gyro output to steering servo."
+
+connections:
+
+  # ESC BEC and throttle → receiver CH2
+  - - XD10_ESC: [1, 2, 3]
+    - W_ESC_THROT: [1, 2, 3]
+    - RECEIVER: [4, 2, 5]
+
+  # Receiver CH1 Y-cable → gyro and LED box
+  - - RECEIVER: [1, 2, 3]
+    - W_CH1_Y: [1, 2, 3]
+    - GYRO_D_BOX3: [1, 4, 4]
+
+  - - W_CH1_Y: [1, 2, 3]
+    - LED_CTRL: [1, 4, 4]
+
+  # Receiver CH2 Y-cable → ESC + LED box
+  - - RECEIVER: [4, 5]
+    - W_CH2_Y: [1, 2]
+    - LED_CTRL: [2, 4]
+
+  # Gyro output → steering servo
+  - - GYRO_D_BOX3: [2, 4, 4]
+    - W_GYRO_SERVO: [1, 2, 3]
+    - SERVO_STEERING: [1, 2, 3]

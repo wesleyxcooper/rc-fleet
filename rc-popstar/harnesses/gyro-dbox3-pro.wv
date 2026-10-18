@@ -1,0 +1,173 @@
+metadata:
+  project: "RC Pop Star — Gyro Variant: HPI D-Box3 Pro (161069)"
+  description: >-
+    Channel map for the D-Box3 Pro gyro. Adds PCA (Priority Control Adjustment)
+    and AGS (Anti-Glitch System) onboard dials vs the Lite version. Remote gain
+    via CH4 works on both Lite and Pro.
+
+    Verified from manual: hpiracing.com/assets/documents/manuals/d_box3_gyro/161068_006_sg_dbox3_gyro_en.pdf
+
+    Receiver connections (from manual verbatim):
+      1. Connect the 4-pin adapter cable to the gyro.
+      2. Connect the 3-pin steering lead to receiver CH1 (Steering).
+      3. Connect the single-wire lead to CH4 (or another AUX channel for Gain Adjustment).
+
+    Channel map with this gyro:
+      CH1 (steering wheel) → D-Box3 Pro CH1 in + Killerbody 48102 CH1 (Y-cable)
+      CH2 (throttle)       → XD10 Pro ESC   + Killerbody 48102 CH2 (Y-cable)
+      CH3 (VR knob)        → FREE — R7FG built-in gyro MUST be OFF (factory default)
+                             Do NOT assign CH3 to R7FG gyro sensitivity when external
+                             gyro is connected.
+      CH4 (SwA momentary)  → D-Box3 Pro GAIN (single-wire, optional)
+      CH5 (SwB 3-way)      → FREE
+      CH6/PPM (SwC)        → FREE
+      CH7/SBUS (SwD)       → FREE
+
+    D-Box3 Pro extras vs Lite:
+      PCA dial — balance between driver steering and gyro correction (CW = more driver)
+      AGS dial — speed of steering return to center (CW = faster return)
+      Lite: GAIN dial only, no PCA or AGS.
+
+    R7FG built-in gyro conflict (from R7FG manual, radiolink.com/rc6gsv3_manual):
+      Factory default = OFF. Enable by pressing binding button 3 times.
+      If enabled while D-Box3 Pro is also connected, both gyros correct CH1 simultaneously.
+      Leave R7FG gyro OFF when using the D-Box3 Pro.
+
+    Specs (from vestergaard product page, vestergaardgroup.com):
+      Input voltage: 4.8V–10V, 20.0 × 15.5 × 8.8mm, 5.4g
+
+# TODO:
+#   [ ] Run EPA setup: hold SET 2 sec → steer full right → full left (from D-Box3 manual)
+#   [ ] Verify CH4 (SwA) is not needed for another function before assigning to gain
+#   [ ] Set PCA and AGS to center as starting point (Pro only)
+
+connectors:
+
+  R7FG_RX:
+    type: "Radiolink R7FG receiver"
+    subtype: "7-channel, 2.4GHz, splash-proof, gyro OFF (leave at factory default)"
+    pincount: 6
+    pinlabels:
+      - "CH1 SIG (steering)"
+      - "CH1 VCC (from XD10 BEC)"
+      - "CH1 GND"
+      - "CH2 SIG (throttle)"
+      - "CH2 GND"
+      - "CH4 SIG (gyro gain)"
+    notes: >
+      Radiolink manual: radiolink.com.cn/download/3edba11a28636d2f5f2f6002d04a92aa.pdf
+      R7FG specs: 35×22×14mm, 6g, 3–12V, IPX4.
+      BEC supply from XD10 Pro ESC (5–7.4V adjustable, item 1G).
+      CRITICAL: R7FG built-in gyro must remain OFF (factory default) when D-Box3 Pro
+      is connected. Two simultaneous gyro corrections on CH1 = oscillation/crash.
+
+  XD10_ESC:
+    type: "Hobbywing XD10 Pro ESC"
+    subtype: "BEC 5–7.4V adjustable (item 1G), sensored brushless"
+    pincount: 3
+    pinlabels:
+      - "TH SIG (throttle, plugs into receiver TH=CH2)"
+      - "BEC VCC (5–7.4V out to receiver and servos)"
+      - "GND"
+    notes: >
+      Manual: hobbywing.com/en/uploads/file/20221012/7cb44bc6cf370ca8bb8ac96c29b6a7e3.pdf
+      BEC range from manual features list: "adjustable from 5V to 7.4V (step: 0.1V)".
+      Do NOT connect separate BEC to receiver — manual states this will damage the ESC.
+      Sensored motor: A→A, B→B, C→C order mandatory.
+
+  GYRO_DBOX3_PRO:
+    type: "HPI D-Box3 Pro (161069)"
+    subtype: "Inline gyro: CH1 receiver → gyro → servo. CH4 = remote gain."
+    pincount: 4
+    pinlabels:
+      - "CH1 in (steering, from receiver via Y-cable)"
+      - "Servo out (corrected steering to servo)"
+      - "CH4 in (remote gain, single-wire, optional)"
+      - "VCC/GND (from receiver BEC)"
+    notes: >
+      Manual (Lite+Pro same doc): hpiracing.com/assets/documents/manuals/d_box3_gyro/161068_006_sg_dbox3_gyro_en.pdf
+      Pro-only: PCA dial (CW = more driver priority), AGS dial (CW = faster return to center).
+      Start PCA and AGS at center. CH4 disables the onboard GAIN dial when active.
+      EPA setup required first run: hold SET 2s → full right → full left.
+
+  KB48102_LED:
+    type: "Killerbody 48102 LED control box"
+    subtype: "Reads CH1 steering (Y) + CH2 throttle (Y). Not all radios compatible."
+    pincount: 3
+    pinlabels:
+      - "CH1 in (steering sense, via Y-cable from receiver CH1)"
+      - "CH2 in (throttle sense, via Y-cable from receiver CH2)"
+      - "VCC/GND (from receiver BEC)"
+    notes: >
+      KB48102 instruction sheet: killerbodyrc.com/Prod_image/instructions/48102.PDF
+      Confirmed text: "CH1 connects to the steering servo port (requires a Y-shaped cable),
+      CH2 connects to the receiver."
+      Compatibility with RC6GS V3 / R7FG not confirmed by Killerbody. Bench-test before install.
+
+  SERVO_ST:
+    type: "Steering servo (driven by D-Box3 Pro output)"
+    pincount: 3
+    pinlabels: ["SIG (from gyro)", "VCC", "GND"]
+    notes: "Servo connects to D-Box3 Pro output, NOT directly to receiver CH1."
+
+cables:
+
+  W_CH1_Y:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["CH1 SIG", "VCC", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH1 → gyro CH1 input + Killerbody CH1."
+
+  W_CH2_Y:
+    wirecount: 2
+    colors: [WH, BK]
+    wirelabels: ["CH2 SIG", "GND"]
+    length: 0.15 m
+    notes: "Y-cable: receiver CH2 → XD10 ESC + Killerbody CH2."
+
+  W_ESC_TH:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["TH SIG", "BEC VCC", "GND"]
+    length: 0.2 m
+    notes: "XD10 Pro throttle + BEC cable to receiver CH2."
+
+  W_GYRO_SERVO:
+    wirecount: 3
+    colors: [WH, RD, BK]
+    wirelabels: ["SIG (corrected)", "VCC", "GND"]
+    length: 0.15 m
+    notes: "D-Box3 Pro output to steering servo."
+
+  W_CH4_GAIN:
+    wirecount: 1
+    colors: [WH]
+    wirelabels: ["CH4 SIG (gain)"]
+    length: 0.2 m
+    notes: "Single-wire from D-Box3 Pro to receiver CH4. Optional — disables onboard GAIN dial."
+
+connections:
+
+  - - XD10_ESC: [1, 2, 3]
+    - W_ESC_TH: [1, 2, 3]
+    - R7FG_RX: [4, 2, 5]
+
+  - - R7FG_RX: [1, 2, 3]
+    - W_CH1_Y: [1, 2, 3]
+    - GYRO_DBOX3_PRO: [1, 4, 4]
+
+  - - W_CH1_Y: [1, 2, 3]
+    - KB48102_LED: [1, 3, 3]
+
+  - - R7FG_RX: [4, 5]
+    - W_CH2_Y: [1, 2]
+    - KB48102_LED: [2, 3]
+
+  - - GYRO_DBOX3_PRO: [2, 4, 4]
+    - W_GYRO_SERVO: [1, 2, 3]
+    - SERVO_ST: [1, 2, 3]
+
+  - - GYRO_DBOX3_PRO: [3]
+    - W_CH4_GAIN: [1]
+    - R7FG_RX: [6]

@@ -1,0 +1,131 @@
+metadata:
+  project: RC Pop Star (HPI Stage-D10) — Chassis-Side Light Harness
+  description: >-
+    Routes LED controller front/rear channel outputs to four chassis-side magnetic
+    contact interfaces (one per body post corner). Each IFACE_*_CHS connector is a
+    2-conductor magnetic interface: pin 1 = 6mm N52 satellite disc magnet (LED+),
+    pin 2 = OEM D10 body post magnet (chassis GND, no added wire).
+    See docs/magnetic-contact-design.md for magnet spec, bracket design, polarity.
+
+# TODO:
+#   [ ] Measure OEM D10 body post magnet diameter from assembly guide (UG PDF, p. hpiracing.com/...)
+#   [ ] Print satellite magnet brackets (PETG, 6.1mm dia x 3.1mm deep press-fit pocket)
+#   [ ] Measure KB48102 port output: open-circuit voltage and short-circuit current before
+#       selecting resistor values in body-harness.wv — box may current-limit internally
+#   [ ] Set XD10 Pro BEC voltage (item 1G, 5V–7.4V) before calculating resistors
+#   [ ] Bench-test chassis harness with spare LED before body shell is fitted
+
+connectors:
+
+  CTRL_FRONT_IN:
+    type: "Front LED input — from Killerbody 48102 ports 1/2 (FL) and 3/4 (FR)"
+    subtype: "Individual wire leads from KB48102 LED jack ports — not a formal JST header"
+    pincount: 2
+    pinlabels:
+      - "Front LED+ (KB48102 port wire)"
+      - "Front GND (chassis/BEC GND)"
+    notes: >
+      The Killerbody 48102 outputs individual wire leads per LED port (not a header).
+      Each port lead is soldered or crimped to the chassis harness input here.
+      Ports 1+2 feed FL; ports 3+4 feed FR (Y-split from same FORWARD channel).
+      KB48102 instruction sheet: killerbodyrc.com/Prod_image/instructions/48102.PDF
+
+      VERIFY: KB48102 may internally current-limit its port outputs for its included
+      5mm LEDs. If so, the series resistors in body-harness.wv are additional and will
+      overdim the body LEDs. Measure open-circuit port voltage and short-circuit current
+      before selecting resistor values for the magnetic contact delivery path.
+
+  CTRL_REAR_IN:
+    type: "Rear LED input — from Killerbody 48102 ports 5 (RL) and 6 (RR)"
+    subtype: "Individual wire leads from KB48102 LED jack ports"
+    pincount: 2
+    pinlabels:
+      - "Rear LED+ (brake-simulated, KB48102 port wire)"
+      - "Rear GND (chassis/BEC GND)"
+    notes: >
+      Ports 5+6 on the KB48102 are the BACKWARD channel: dim when idle,
+      bright on brake signal. Y-split: port 5 → RL, port 6 → RR.
+
+  IFACE_FL_CHS:
+    type: "Chassis magnetic interface — Front Left"
+    subtype: "N52 satellite magnet (LED+) + OEM body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_FL+ (6mm N52, South face up)"
+      - "POST_FL_GND (OEM body post, chassis GND)"
+    notes: "Mating body-side connector: IFACE_FL_BODY in body-harness.wv."
+
+  IFACE_FR_CHS:
+    type: "Chassis magnetic interface — Front Right"
+    subtype: "N52 satellite magnet (LED+) + OEM body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_FR+ (6mm N52, South face up)"
+      - "POST_FR_GND (OEM body post, chassis GND)"
+    notes: "Mating body-side connector: IFACE_FR_BODY in body-harness.wv."
+
+  IFACE_RL_CHS:
+    type: "Chassis magnetic interface — Rear Left"
+    subtype: "N52 satellite magnet (LED+) + OEM body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_RL+ (6mm N52, South face up)"
+      - "POST_RL_GND (OEM body post, chassis GND)"
+    notes: "Rear channel. Mating: IFACE_RL_BODY in body-harness.wv."
+
+  IFACE_RR_CHS:
+    type: "Chassis magnetic interface — Rear Right"
+    subtype: "N52 satellite magnet (LED+) + OEM body post magnet (GND)"
+    pincount: 2
+    pinlabels:
+      - "SAT_RR+ (6mm N52, South face up)"
+      - "POST_RR_GND (OEM body post, chassis GND)"
+    notes: "Rear channel. Mating: IFACE_RR_BODY in body-harness.wv."
+
+cables:
+
+  W_FL_RUN:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+", "GND"]
+    length: 0.25 m
+    notes: "CTRL_FRONT_IN to FL satellite magnet. 26 AWG. Route inside left chassis rail."
+
+  W_FR_RUN:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+", "GND"]
+    length: 0.25 m
+    notes: "CTRL_FRONT_IN to FR satellite magnet (Y-split from same source as W_FL_RUN)."
+
+  W_RL_RUN:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (brake)", "GND"]
+    length: 0.2 m
+    notes: "CTRL_REAR_IN to RL satellite magnet. Route inside left chassis rail, rear."
+
+  W_RR_RUN:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["LED+ (brake)", "GND"]
+    length: 0.2 m
+    notes: "CTRL_REAR_IN to RR satellite magnet (Y-split from same source as W_RL_RUN)."
+
+connections:
+
+  - - CTRL_FRONT_IN: [1, 2]
+    - W_FL_RUN: [1, 2]
+    - IFACE_FL_CHS: [1, 2]
+
+  - - CTRL_FRONT_IN: [1, 2]
+    - W_FR_RUN: [1, 2]
+    - IFACE_FR_CHS: [1, 2]
+
+  - - CTRL_REAR_IN: [1, 2]
+    - W_RL_RUN: [1, 2]
+    - IFACE_RL_CHS: [1, 2]
+
+  - - CTRL_REAR_IN: [1, 2]
+    - W_RR_RUN: [1, 2]
+    - IFACE_RR_CHS: [1, 2]
