@@ -16,8 +16,26 @@ conventional spray — not the inside-out technique used on standard lexan bodie
 | Autocolor cross-ref | MPE3B (pearl finish) | paintref.com |
 | Finish type | Pearl metallic (2-coat: basecoat + clearcoat) | carross.eu |
 | Production years | 1993–1997 | ral1.ru / carross.eu |
-| Visual character | Saturated magenta-purple; jewel-tone that shifts pink-to-violet by viewing angle and lighting | Enthusiast Auto Group listing of 1996 E36 M3 Lila Metallic |
-| Digital hex | **Not verified** — no authoritative source publishes a hex for this BMW Individual color. `#A0478A` is a rough approximation for reference only. | dreambmw.com, paintref.com, e38registry.org (none carry verified hex) |
+| Visual character | Warm magenta-hot-pink, leans distinctly pink rather than purple; metallic flake shifts by viewing angle | — |
+| Measured hex | **#BC1C86** — measured with a color picker from a real Lila Metallic car photograph; represents one angle/lighting condition. The metallic flake will shift this value noticeably. | User-measured |
+
+---
+
+## Closest off-shelf paint matches to #BC1C86
+
+Searched using [nickryden.github.io/paint-comparator](https://nickryden.github.io/paint-comparator/) (Euclidean RGB distance) and [cadetcraft.com](https://cadetcraft.com/data/paints/color/pink).
+
+None of the miniature paint brands (Citadel, Vallejo, Army Painter, P3) carry a close match — their palettes don't extend to this saturation level. Scale75 Artist range is closest in the hobby category.
+
+| Paint | Brand | Hex | Distance | Notes |
+| :---- | :---- | :---- | :----: | :---- |
+| **Magenta** | Scale75 Artist | `#C60A85` | ~20 | Closest overall; slightly higher red, lower green. Airbrush paint. |
+| Carroburg Crimson | Citadel | `#A82A70` | 33 | Closest in Citadel/Vallejo/AP/P3 range; noticeably darker |
+| Emperors Children | Citadel | `#B94278` | 41 | Lighter, more pink |
+| Sunset Red | Vallejo Model | `#C22C5F` | 43 | Too red-pink |
+| Murderous Magenta | P3 Formula | `#A81F5E` | 45 | Closest P3 option |
+
+**For RC body work, none of the above are practical** — they're miniature-scale brush paints. For airbrush application on a 3D-printed body, see Options A–C below.
 
 ---
 
@@ -74,7 +92,7 @@ metallic pearl paint more faithfully than single-pass spray cans.
 
 ## Graphics
 
-**"Pop Star" vinyl lettering** in Barbie Medium font. Font file: [`../assets/barbie-medium.ttf`](../assets/barbie-medium.ttf).
+**"Pop Star" vinyl lettering** in Dollie Script font. Font file: [`../assets/dollie-script.ttf`](../assets/dollie-script.ttf) — by Måns Grebäck, free for personal use ([dafont.com](https://www.dafont.com/dollie-script.font)).
 
 Placement options:
 - Rear 3/4 of body shell (below window line)

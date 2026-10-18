@@ -1,19 +1,23 @@
 ```
- ★                                                                    ★ 
-  \                                                                   / 
-   \  ,;*##*|,                           :*##*;.                    
-    ,*@|;::;*@|                        ,#@;::;##,  ..               
-    **:*#.  .@@.  ...      ..          ;@*,   .   |@,     ...    ...
-     .|@*,:|##:,|#*|*#:  *@*|#*.        ;*@#|:. .*@#|; ,**|*@| :##|;
-     .@@;;;:, :@#.   @@ ;@|  ;@|          .:*@#. *@,   :;;|#@: #@,  
-     |@|      |@;   ;@|.#@.  *@:     ;*,    ,@@,,@*  :##:,:@# :@|   
-    ,@@,      .*#||**; ;@|*|#*:      .;*#**##|, :@#;.:##||#@:.#@.   
-     ..          ..   .@@. ..            ...      .    ..  .  ..    
-                      |@#                                           
+ ★                                                                                    ★ 
+  \                                                                                   / 
+   \    .,;|*####*|;,                                    .:|*#|     .,              
+     .;*#@@@@@@|**#@@*,                               .;*@@@#@@,  :*@@:             
+    :@@*;:;@@#,    ,#@@.                            ,|@#|:,. ,|,,*@*@#::.           
+    *|.  :@@|.      |@@.                          .|@*:.     ::##;|#:;;;      :;.   
+    .   ;@@:    ...:@@: .,::.    ,: ,|;           |*|;|#*|:  .**:|;. .:|||,  ;@@:,, 
+       :@#:;||||*@@#||##*:,**  ,*#|*@@@                .#@@;.*#|;. ,*#|::*:  ,#;##, 
+      :@@:@*::;**;,  |@: .#@; ;@***:|@;             .,;;*@@#*@;.  :@;. .|,  ,*:#|   
+     .@@: .::,.     |@|  ,@#:*@*|, :#;,|:        .;*|:..*@#,@*  .;@| .;@| ,|;:@* .;;
+     *@;            @@*:;|;:@@#: .|@*|;.       .|@|..,;#|: :@#;||@@*||@@|*;..@@*||, 
+    ,@*             :**|:..#@|. ,||;,          ;@@#**|:.   ,*|:. **:.,*|:   ,*|:.   
+    ,:                    *@|                   .,.                                 
+                         ;@#.                                                       
+                         ||.                                                        
 
-                                                                     ★
-                                                                    /
-                                                                   /
+                                                                                     ★
+                                                                                    /
+                                                                                   /
 ```
 
 # rc-popstar
@@ -35,9 +39,10 @@ plain text, git-diffable, outputs SVG/PNG/HTML/BOM automatically.
 
 | File | Description |
 |---|---|
-| [`assets/popstar-logo.png`](assets/popstar-logo.png) | "Pop Star" rendered in Barbie Medium at 120pt, black background |
+| [`assets/popstar-logo.png`](assets/popstar-logo.png) | "Pop Star" rendered in Dollie Script at 110pt |
 | [`assets/popstar-logo-trim.png`](assets/popstar-logo-trim.png) | Tight-cropped version used as ASCII art source |
-| [`assets/barbie-medium.ttf`](assets/barbie-medium.ttf) | Barbie Medium font — free for personal use ([fontmeme.com](https://fontmeme.com/fonts/barbie-medium-font/)) |
+| [`assets/dollie-script.ttf`](assets/dollie-script.ttf) | Dollie Script by Måns Grebäck — free for personal use ([dafont.com](https://www.dafont.com/dollie-script.font)) |
+| [`assets/barbie-medium.ttf`](assets/barbie-medium.ttf) | Barbie Medium font (kept for reference) — free for personal use ([fontmeme.com](https://fontmeme.com/fonts/barbie-medium-font/)) |
 | [`assets/generate-ascii-logo.py`](assets/generate-ascii-logo.py) | Script to regenerate the ASCII art header (requires ImageMagick + jp2a) |
 
 The shooting star accents (★ with diagonal tail) reference the Pop Star brand logo — a chrome shooting-star shape used as the car's identity.
@@ -46,10 +51,10 @@ The shooting star accents (★ with diagonal tail) reference the Pop Star brand 
 
 ## Body Color — BMW Individual Lila Metallic (0490)
 
-Magenta-purple pearl metallic. Code **0490 / BASF FE86-403X**. No verified digital hex
-for this BMW Individual color — visual reference: jewel-tone between hot pink and purple,
-shifts by viewing angle. Full paint guide including RC-specific options and graphic
-placement: [`docs/paint-guide.md`](docs/paint-guide.md).
+Magenta-purple pearl metallic. Code **0490 / BASF FE86-403X**. Measured hex from a
+real car photo: **#BC1C86** (warm magenta, leans hot-pink rather than purple — the
+metallic flake shifts by viewing angle). Full paint guide including RC-specific options
+and graphic placement: [`docs/paint-guide.md`](docs/paint-guide.md).
 
 ---
 

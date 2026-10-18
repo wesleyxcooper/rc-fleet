@@ -1,13 +1,16 @@
 # ASCII logo generator for Pop Star
 #
-# Font:  Barbie Medium (free for personal use)
-#        Source: https://fontmeme.com/fonts/barbie-medium-font/
-#        File:   assets/barbie-medium.ttf
+# Font:  Dollie Script (free for personal use)
+#        Designer: Måns Grebäck
+#        Source: https://www.dafont.com/dollie-script.font
+#        File:   assets/dollie-script.ttf
 #
 # Render the source PNG first (requires ImageMagick):
-#   magick -background black -fill white -font assets/barbie-medium.ttf \
-#          -pointsize 120 -gravity Center -size 900x200 \
-#          label:"Pop Star" assets/popstar-logo.png
+#   magick -size 700x150 xc:white \
+#          -font assets/dollie-script.ttf \
+#          -pointsize 110 -fill black \
+#          -gravity Center -annotate 0 "Pop Star" \
+#          assets/popstar-logo.png
 #   magick assets/popstar-logo.png -trim +repage assets/popstar-logo-trim.png
 #
 # Then run this script (requires jp2a):
@@ -18,25 +21,24 @@
 # car's identity mark.
 
 import subprocess
+from pathlib import Path
 
-# Generate at a width that leaves room for margin decorations
+ASSETS = Path(__file__).parent
+
+# Generate at width=80 (best readability for Dollie Script's flowing cursive)
 result = subprocess.run(
-    ["jp2a", "--width=64", "--chars= .,:;|*#@", "assets/popstar-logo-trim.png"],
+    ["jp2a", "--width=80", "--chars= .,:;|*#@", "--invert", str(ASSETS / "popstar-logo-trim.png")],
     capture_output=True, text=True
 )
 lines = result.stdout.split('\n')
 while lines and not lines[-1].strip():
     lines.pop()
 
-# Pad every line to width
+# Pad every line to equal width
 w = max(len(l) for l in lines)
 lines = [l.ljust(w) for l in lines]
 
-# Shooting star shape: star body + tail going lower-left
-# Upper-left star at (0, 1), tail at (1, 0), (2, -1) → points toward text
-# Upper-right star at (0, w+6), tail going lower-left down to text
-
-# We'll build a canvas wider than the art, adding star decorations in the margin
+# Shooting star shape: star body + diagonal tail pointing toward the text
 MARGIN = 4
 total_w = w + MARGIN * 2
 
@@ -46,25 +48,20 @@ def pad(line, left=MARGIN):
 out = []
 
 # Two rows above the art: shooting stars at left and right
-# Left star: tail points down-right ( \ )
-# Right star: tail points down-left ( / )
 row0 = ' ★' + ' ' * (total_w - 4) + '★ '
 row1 = '  \\' + ' ' * (total_w - 5) + '/ '
 out.append(row0)
 out.append(row1)
 
-# Art rows (the first 2 get continuation of the tails)
+# Art rows
 for i, line in enumerate(lines):
-    prefix = pad('')
     if i == 0:
         prefix = '   \\'   # tail continues
-    elif i == 1:
-        prefix = '    '    # tail ends, art starts
     else:
         prefix = '    '
     out.append(prefix + line)
 
-# A small shooting star to the lower-right as an accent
+# Small shooting star accent lower-right
 pad_r = total_w - 3
 out.append('')
 out.append(' ' * pad_r + '★')
