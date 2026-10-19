@@ -25,12 +25,12 @@ lowest-risk starting point; swap components as you develop preferences.
 
 | Item | Part # | Notes | Price |
 |---|---|---|---|
-| **Motor** — HPI FLX-D10-3650 10.5T Sensored | HPI161066 | Matched to the Flux ESC; 10.5T is standard drift motor class. [AMain](https://www.amainhobbies.com/hpi-staged10-flux-flxd103650-sensored-brushless-motor-10.5t-hpi161066/p1853233) | **$52.46** |
-| **ESC** — Hobbywing Xerun XD10 Pro | HWA30112614 (Black) | Drift-specific firmware, 100A continuous, OTA programmable. Better long-term than HPI Flux ESC. [AMain](https://www.amainhobbies.com/hobbywing-xerun-xd10-pro-drift-spec-brushless-speed-controller-black-hwa30112614/p1359514) | **$159.99** ⚠️ Back Order |
+| **Motor** — HPI FLX-D10-3650 10.5T Sensored | HPI161066 | Matched to the Flux ESC; 10.5T is standard drift motor class. [AMain](https://www.amainhobbies.com/hpi-staged10-flux-flxd103650-sensored-brushless-motor-10.5t-hpi161066/p1853233) · ask RC Car World in-store (authorized HPI dealer; not listed separately online) | **$52.46** |
+| **ESC** — Hobbywing Xerun XD10 Pro | HWA30112614 (Black) | Drift-specific firmware, 100A continuous, OTA programmable. Better long-term than HPI Flux ESC. [AMain](https://www.amainhobbies.com/hobbywing-xerun-xd10-pro-drift-spec-brushless-speed-controller-black-hwa30112614/p1359514) · [RC Car World](https://rccarworld.com/product/xerun-xd10-pro-esc-drift-racing-stealth-edition-black/) | **$159.99** |
 | **Servo** — HPI SX-12MGLP | HPI161067 | 12kg metal gear, 7.4V, low profile. Same unit that ships in the Flux RTR. | ⚠️ Not found at US online retailers — call RC Car World |
-| **Gyro** — HPI D-Box3 Lite | HPI161068 | Entry gyro from HPI, fits D10 mounting bracket. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-lite-drift-gyro-hpi161068/p1853234) | **$29.99** |
-| **Gyro (upgrade)** — Yokomo DP-302 V4 | YOKDPP-302V4B | Better gyro when ready to move up. [AMain](https://www.amainhobbies.com/yokomo-dp302-v4-drift-steering-gyro-yokdpp-302v4b/p868616) | **$75.99** |
-| **D-Box3 Pro** (alt to DP-302 V4) | HPI161069 | Mid-tier HPI gyro. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-pro-drift-gyro-hpi161069/p1853235) | **$36.99** |
+| **Gyro** — HPI D-Box3 Lite | HPI161068 | Entry gyro from HPI, fits D10 mounting bracket. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-lite-drift-gyro-hpi161068/p1853234) · ask RC Car World in-store | **$29.99** |
+| **Gyro (upgrade)** — Yokomo DP-302 V4 | YOKDPP-302V4B | Better gyro when ready to move up. [AMain](https://www.amainhobbies.com/yokomo-dp302-v4-drift-steering-gyro-yokdpp-302v4b/p868616) · [RC Car World](https://rccarworld.com/product/drift-steering-gyro/) | **$75.99** |
+| **D-Box3 Pro** (alt to DP-302 V4) | HPI161069 | Mid-tier HPI gyro. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-pro-drift-gyro-hpi161069/p1853235) · ask RC Car World in-store | **$36.99** |
 | **Radio** — Radiolink RC6GS V3 + R7FG receiver | — | 7-channel surface radio; R7FG has built-in gyro. Buy once, use for both cars. [Amazon](https://www.amazon.com/dp/B09Y8H434N) | **$74.99** |
 | **Battery** — Gens Ace Redline 2.0 2S LiHV Shorty (7.6V/4200mAh) | GEA42002S14D5 | Shorty fits the D10 tray. XT60 connector. [AMain](https://www.amainhobbies.com/gens-ace-redline-2.0-2s-shorty-lihv-battery-140c-7.6v-4200mah-w-5mm-bullets-gea42002s14d5/p1556141) | **$49.99** |
 | **Battery (alt)** — ProTek RC 2S LCG Stock Spec Shorty (7.4V/4800mAh) | PTK-5147-26 | [AMain](https://www.amainhobbies.com/protek-rc-2s-150c-low-ir-sig-stock-spec-lcg-shorty-lipo-battery-ptk-5147-26/p1674360) | **$59.99** |
@@ -46,13 +46,16 @@ lowest-risk starting point; swap components as you develop preferences.
 | **Body — Phase 2** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU after first month of driving. | material cost only |
 | **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | Chassis-side N52 cone magnets + hardware for snap-on body attachment without body clip holes. Required for Phase 2 body (model 4 catch points into the TPU body underside). [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
 | **Wheels** — 26mm touring car offset, 190mm width | — | Standard 1/10 touring offset; confirm hex fitment with D10 | ~$20–30 (not yet verified) |
-| **Drift tires** — Yokomo DRC (carpet, 4-pack) | YOKZR-DRCA | Indoor/carpet compound — right for RC Car World's track. [AMain](https://www.amainhobbies.com/yokomo-drc-competition-drift-tire-4-for-carpet-surface-yokzr-drca/p682057) | **$15.49** |
+| **Drift tires** — Yokomo DRC (carpet, 4-pack) | YOKZR-DRCA | Indoor/carpet compound. [AMain](https://www.amainhobbies.com/yokomo-drc-competition-drift-tire-4-for-carpet-surface-yokzr-drca/p682057) | **$15.49** |
+| **Drift tires** — Yokomo DRPA (P-Tile, 4-pack) | YOKZR-DRPA | For P-Tile surfaces. [RC Car World](https://rccarworld.com/product/yokomo-drpa-competition-drift-tire-4-for-p-tile/) | **$19.00** |
 | **Drift tires** — Yokomo DRA (asphalt, 4-pack) | YOKZR-DRAA | For outdoor asphalt sessions. [AMain](https://www.amainhobbies.com/yokomo-dra-competition-drift-tire-4-for-asphalt-surface-yokzr-draa/p682052) | **$15.75** |
-| **Tire mounting tape** — Yokomo DRA/DRC | YOKZR-DRTA | Required to mount these tires to the wheels. [AMain](https://www.amainhobbies.com/yokomo-dra-drc-drift-tire-mounting-tape-yokzr-drta/p682051) | **$4.29** |
+| **Tire mounting tape** — Yokomo DRA/DRC | YOKZR-DRTA | Required to mount these tires to the wheels. [AMain](https://www.amainhobbies.com/yokomo-dra-drc-drift-tire-mounting-tape-yokzr-drta/p682051) · [RC Car World](https://rccarworld.com/product/yokomo-dra-drc-drift-tire-mounting-tape/) | **$4.29** |
 | **Pinion gear** — 48P, to match FDR | — | Stock FDR is 2.6; start with HPI's recommended pinion | ~$5–10 (not yet verified) |
 | **Satellite magnets** — N52 NdFeB disc 6mm × 3mm | D62 (K&J Magnetics) | 8 required (2 per body post corner). LED+ conductor in the magnetic contact interface. [K&J Magnetics](https://www.kjmagnetics.com/proddetail.asp?prod=D62) | ~$8–10 for a pack |
 | **Resistors** — 100Ω and 150Ω 1/4W | — | Current limiting in body harness. Values depend on XD10 Pro BEC setting (item 1G). See `rc-popstar/docs/build-decisions.md` for full table. | <$1 at Micro Center / generic |
 | **"Pop Star" vinyl graphic** | — | Script lettering in Barbie font on rear 3/4 of body or rear windshield. Get cut at a local sign shop or order from a custom vinyl service (Sticker Mule, Unstoppable Graphics, etc.). Font: Bombshell Pro (closest commercially available match to the Barbie script). Specify white or hot pink, matte or gloss to taste. | ~$10–25 cut + shipped |
+
+> **Confirm track surface before buying tires:** RC Car World stocks DRPA (P-Tile) online but not DRC (carpet) or DRA (asphalt). Ask staff what compound they recommend for their indoor track before buying — P-Tile and carpet require different compounds.
 
 ---
 
@@ -77,6 +80,8 @@ Officially licensed lexan E36 M3 coupe, 260mm wheelbase, 191mm front / 192mm rea
 | 24K2113 | Light lenses — GR Works | — | [Elite Drift Shop](https://www.elitedriftshop.com/en/shop/24k-rc-technology-gr-works-e36-light-lenses-taf21013/) |
 | 24K2114 | Hood air intakes | — | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
 | GWN0000 | Wide body kit V1 | $59.99 | [supergdrift.com](https://supergdrift.com/products/bmw-m3-e36-wide-body-bodykit-1-10-drift-body-shell-24k-gwn0000) |
+
+> **Also at RC Car World (local, verified in stock):** [Fog light buckets (TAF21007) $21.99](https://rccarworld.com/product/24k-rc-technology-1-10-bmw-e36-m3-fog-light-buckets/) · [Roof spoiler (TAF21005) $25.99](https://rccarworld.com/product/24k-rc-technology-1-10-bmw-e36-m3-roof-spoiler-taf21005/) · [Side mirrors (TAF21004) $14.00](https://rccarworld.com/on-sale/drift-parts/) · [Hood air intakes (TAF21014) $19.00](https://rccarworld.com/on-sale/drift-parts/) · [GR Works light lenses (TAF21013) $65.99](https://rccarworld.com/on-sale/drift-parts/). Main body (TAF21000) and standard light buckets (TAF21002) not stocked online — order from AMain.
 
 **Phase 2 — custom E36 cabriolet (modular 3D print + aluminum panel skins):**
 No production lexan E36 cabriolet body exists. Design approach: printed inner structure (roll cage, chassis mounts, wheel arches, dashboard, interior) with aluminum sheet panel skins formed over printed forming bucks for flat/single-curve panels (hood, doors, roof). Compound-curve parts (overfender arches, front bumper, rear valance) print directly in TPU. Panels develop character and battle scars over time.
@@ -264,6 +269,7 @@ This is the opposite of conventional model painting. All Tamiya PS, Parma, and s
 **Resources:**
 - [Tamiya PS spray paint line](https://www.tamiyausa.com/shop/paint/rc-color-spray/) — the industry standard. PS-1 White, PS-2 Red, PS-13 Gold are common starting points.
 - [Tamiya PS sprays at AMain](https://www.amainhobbies.com/search?s=Tamiya+PS+spray&cID=1) — stocked individually, ~$8–10/can.
+- [Tamiya PS paint at RC Car World](https://rccarworld.com/category/paint/) — full range stocked locally, $8–12/can.
 - [YouTube: "How to paint a lexan RC body"](https://www.youtube.com/results?search_query=how+to+paint+lexan+rc+body+tutorial) — many solid tutorials covering masking, backing coats, and gradient techniques.
 
 **For a 3D printed body (the E36 cabriolet):**
@@ -468,24 +474,22 @@ one quart of fuel ($14.75) + starter set ($32.99) + two glow plugs ($23.98).
 
 | Item | Status |
 |---|---|
-| Hobbywing XD10 Pro ESC | ⚠️ Back Order at AMain (all color variants) |
+| Hobbywing XD10 Pro ESC | ✅ In stock at [RC Car World](https://rccarworld.com/product/xerun-xd10-pro-esc-drift-racing-stealth-edition-black/) $159.99; ⚠️ Back Order at AMain |
 | HPI SX-12MGLP Servo | ⚠️ Not found at US online retailers — call RC Car World (856-720-0017) |
-| Yokomo DRA asphalt tires | ⚠️ "View Details" only at AMain — may be limited stock; call to confirm |
+| Yokomo DRC/DRA tires | ⚠️ Not listed at RC Car World online; DRC (carpet) and DRA (asphalt) available at AMain. RC Car World stocks DRPA (P-Tile) — confirm their track surface before ordering. |
+| HPI FLX-D10 motor (HPI161066) | Not listed at RC Car World online — ask in-store (authorized HPI dealer) |
+| HPI D-Box3 gyros (HPI161068/161069) | Not listed at RC Car World online — ask in-store |
 
 ---
 
 ## Next Steps
 
-1. **Call RC Car World** before ordering — confirm D10 parts stock, ask about SX-12MGLP
-   servo availability and price, get their recommended gyro for their track surface.
+1. **Call or visit RC Car World** (856-720-0017) before finalizing orders. Confirmed in stock online: D10 Creator Edition ($149.99), Hobbywing XD10 Pro ESC ($159.99), Yokomo DP-302 V4 gyro ($75.99), Tamiya PS paint, E36 M3 accessories (fog lights, roof spoiler, mirrors, hood vents, light lenses). Ask in-store about: SX-12MGLP servo, HPI161066 motor, D-Box3 Lite/Pro gyros (HPI161068/161069), DRC/DRA tire availability, and what tire compound they recommend for their track surface.
 2. **Set a saved eBay search** for `HPI Nitro RS4 3 Drift`. Target a complete runner at
    $150–200. Don't rush; condition matters more than speed. A seized engine is a paperweight.
-3. **Order D10 chassis + motor + gyro** once servo availability is confirmed. ESC can follow
-   when XD10 Pro comes back in stock (or substitute Hobbywing 10BL120 as a stop-gap).
+3. **Order or pick up D10 chassis + ESC + gyro** once servo is confirmed. Hobbywing XD10 Pro is in stock at RC Car World now — no need to wait on AMain back-order.
 4. **Build electronics into D10** before buying body/wheels — verify fit and function first.
-5. **Phase 1 — run the APlastics E36 Coupe** for the first month. Learn to initiate and hold
-   drifts. Tune gyro gain, BEC voltage, battery position, and shock oil on this body. Let it
-   absorb the early crashes before the custom body goes on.
+5. **Phase 1 — run the 24K E36 M3 (TAF21000)** for the first month. Learn to initiate and hold drifts. Tune gyro gain, BEC voltage, battery position, and shock oil on this body. Let it absorb the early crashes before the custom body goes on.
 6. **LED system:** bench-test Killerbody 48102 with R7FG before cutting the body for housings. Set XD10 Pro BEC voltage (item 1G), then select resistor values from the table in `rc-popstar/docs/build-decisions.md`. Measure KB48102 port output before committing to resistor values.
 7. **Phase 2 — design and print the custom E36 cabriolet** once you understand how the car
    behaves. Order HPI 161055 magnetic body mount set; model 4 catch points into the body
