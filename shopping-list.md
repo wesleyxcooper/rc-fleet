@@ -84,12 +84,16 @@ No production lexan E36 cabriolet body exists. Design approach: printed inner st
 **Design starting point — 1:30 E36 Cabrio model scaled to 1:10:**
 Scale the YouMagine E36 Cabrio 1994 model (1:30) by ×3 uniform in Blender to reach 1:10. The body proportions, interior, and panel geometry are correct at any scale — multiply all axes by 3.0. Supplement with a 3D scan of the physical D10 chassis (Polycam/KIRI Engine) to establish fitment geometry: wheel arch positions, floor clearance, and magnetic mount catch-point locations. See workflow notes below.
 
-**Phase 2 materials — aluminum panel skins:**
+**Phase 2 materials:**
 
-| Material | Thickness | Source | Approx. cost |
+| Material | Use | Source | Approx. cost |
 |---|---|---|---|
-| **K&S Engineering aluminum sheet** | 0.016" (0.4mm) | Ace Hardware, hobby shops, [Amazon](https://www.amazon.com/s?k=K%26S+Engineering+aluminum+sheet+0.016) | ~$6–8 per 4"×10" sheet |
-| Aluminum flashing roll (alt) | 0.019" (0.5mm) | Home Depot / Lowe's roofing section | ~$18 for 10ft roll |
+| **K&S Precision Metals #255** 0.016" (0.4mm), 3003-H14 alloy | Aluminum panel skins + forming bucks | [Amazon](https://www.amazon.com/Aluminum-Sheets-Thick-Wide-Long/dp/B000H5Y8K6) · [ksmetals.com](https://ksmetals.com/collections/aluminum/sheet) · hobby shops | $17.13 / 6-sheet pack (~$2.85/sheet) |
+| Aluminum flashing roll 0.019" (0.5mm) | Bulk aluminum skin material (alt) | Home Depot / Lowe's roofing section | ~$18 for 10ft roll |
+| Self-etching primer | Aluminum panel prep — required for paint adhesion | Auto parts store (Rust-Oleum Automotive) | ~$12 rattle can |
+| Tamiya Surface Primer (fine) | Blend coat over putty seams + printed parts | Hobby store / Amazon | ~$10 |
+| Squadron Green Putty or Vallejo Plastic Putty | Blend seam between aluminum panel + printed arch | Hobby store | ~$5–8 |
+| Print service (see below) | All printed parts — no home printer | JLCPCB, Craftcloud, Shapeways | See print service table |
 
 Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
 
@@ -109,8 +113,12 @@ Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S s
 | Wheelbase | D10 adjustable 246–264mm; target 260mm to match TAF21000 |
 | Magnetic catch points | 4× 10mm diameter recesses, ~2mm deep, on body underside at D10 post locations — measure from your built D10 before modeling |
 | Wheel arch clearance | Minimum 5mm gap from tire at full droop + full lock |
-| Wall thickness (FDM) | 1.5–2mm for TPU; 2mm for PETG |
-| Recommended filament | TPU (flexible, impact-resistant, paintable) — closest in behavior to lexan. PETG as fallback. |
+| Wall thickness | 1.5–2mm for TPU; 2mm for PLA/ASA/PETG |
+| M2 screw clearance hole (FDM) | Design at **2.2mm** — FDM closes up nominal holes |
+| M2 heat-set insert hole (FDM) | Design at **3.2mm** |
+| Snap/clip tab clearance (FDM) | Design **0.3mm** gap between mating faces |
+| Magnetic recess diameter (FDM) | Design at **10.3mm** for 10mm N52 magnet |
+| Magnetic recess diameter (SLS) | Design at **10.1mm** for 10mm N52 magnet |
 
 #### Body architecture — inner frame + swappable panel system
 
@@ -166,6 +174,77 @@ The inner frame is the permanent structural skeleton of the body. It mounts to t
 8. **Magnetic catch points** — model 4 shallow recesses (10mm diameter, ~2mm deep) into the body underside at the D10 magnetic post locations. Measure from your built D10 at 260mm wheelbase before finalizing.
 9. **LED integration** — model round headlight recesses directly into the front panel; rear cluster housings into the tail section. No separate buckets needed.
 10. **Interior and engine** — keep the scaled dash and seats from the 1:30 model; add/refine roll cage tubes as curves with bevel. Decorative engine visible through the hood if you model the hood as openable (TPU flexure hinge on the hood edge).
+
+#### Fusion 360 — parametric mount standards + print-ready files
+
+Blender handles organic surface modeling. Fusion 360 handles everything that requires dimensional precision: the mount interface standard, screw holes, clip tabs, frame tabs, tolerances. All Blender geometry imports as a reference mesh — Fusion-native parametric features are built on top of it. This is the step where parts become print-ready and cross-compatible.
+
+**D10 chassis stub — measure before starting Fusion work:**
+
+Measure from the physical built D10 with calipers. Model these as a simple parametric B-Rep stub in Fusion — not a full chassis replica, just the critical interfaces.
+
+| Measurement | How to take it |
+|---|---|
+| Wheelbase (axle center to axle center) | Set to 260mm; confirm after adjusting D10 |
+| Magnetic post X positions (front/rear) | Calipers from front edge of chassis to post center |
+| Magnetic post Y positions (left/right) | Calipers from chassis centerline to each post center |
+| Post height (magnet center from chassis floor) | Calipers |
+| Track width front (hub face to hub face) | Calipers |
+| Track width rear (hub face to hub face) | Calipers |
+| Ground clearance (chassis floor to ground) | Feeler gauge or calipers |
+| Wheel outer diameter | Calipers across tire |
+| Wheel arch clearance envelope | Roll wheel to full droop + full steering lock; photograph from front and side; measure extreme positions |
+
+**Fusion 360 workflow:**
+
+1. **Parameters spreadsheet first** (Modify → Change Parameters). Define the attachment standard before modeling anything:
+   - `panel_mount_hole_dia = 2.2mm`
+   - `panel_mount_hole_spacing` (center-to-center; choose and standardize)
+   - `clip_tab_width`, `clip_tab_depth`, `clip_tab_clearance = 0.3mm`
+   - `magnet_recess_dia`, `magnet_recess_depth`
+   - Any other interface dimension
+2. **Insert D10 chassis stub** from caliper measurements as a parametric B-Rep component
+3. **Insert Blender body panels** (File → Insert → Insert Mesh, OBJ format) as mesh body reference objects — one component per panel
+4. **Build inner frame** as a new parametric B-Rep component. Constrain it to the chassis stub. Add all panel attachment features referencing the parameters spreadsheet.
+5. **Build each panel variant** as its own component. Reference the OBJ mesh for surface shape; add Fusion-native mount holes and clip features from parameters. Assembly-constrain to inner frame to verify fit.
+6. **Interference check** — right-click assembly → Inspect → Interference. Resolve any clashes before exporting.
+7. **Export each component as STL**: right-click component → Save As Mesh → STL. Set refinement to Fine (0.005mm chord deviation, 5° angle tolerance).
+
+**Before sending to print service — validate STL files:**
+- Upload each STL to [Netfabb Online](https://netfabb.autodesk.com) (free) — fixes non-manifold geometry and reports wall thickness issues
+- Check minimum wall thickness is above process minimum (FDM: 1.5mm; SLS: 0.8mm)
+- Confirm part orientation in slicer preview or service preview matches intent
+
+#### Print services — no home printer
+
+All parts ordered from a print service. **Material and process choice has a major impact on surface finish.** FDM parts have visible layer lines that require significant post-processing before painting. SLS and MJF parts have a fine matte texture that primes and paints directly, similar to model kit styrene.
+
+| Part type | Recommended process | Material | Layer lines? | Where to order |
+|---|---|---|---|---|
+| Body panels (painted exterior) | **SLS** | PA12 nylon | None | JLCPCB, Shapeways |
+| Inner frame, roll cage (structural, not painted) | FDM | ASA or PETG | Yes (internal — irrelevant) | JLCPCB |
+| Flexible fenders, bumper fascias | FDM | TPU 95A | Light — sand before priming | JLCPCB (offers TPU) |
+| Interior, dashboard, seats (visible, fine detail) | SLA resin | Resin | None | JLCPCB, Craftcloud |
+| Forming bucks (aluminum forming tool, not final part) | FDM | PLA | Yes (irrelevant — tool only) | JLCPCB (cheapest) |
+
+| Service | What it's good for | TPU? | SLS? | Notes |
+|---|---|---|---|---|
+| **JLCPCB** | Best price overall; FDM, SLA, SLS | ✅ TPU 95A | ✅ PA12 | Ships from China; 7–14 days. Primary service for most parts. |
+| **Craftcloud** | Aggregator — quotes from multiple services | Varies | ✅ | Good for comparing prices across processes |
+| **Shapeways** | MJF nylon specialty; US-based | ❌ | ✅ MJF PA12 | Higher cost; best surface finish for small detailed parts |
+| **Protolabs** | Industrial tolerance; fast | ✅ | ✅ | Most expensive; use only if critical-fit parts need re-runs quickly |
+
+**Surface finish workflow for printed body panels (SLS):**
+1. SLS PA12 arrives with fine gritty texture — no layer lines, no support marks
+2. Sand lightly with 400-grit wet/dry; wipe with IPA
+3. One coat Tamiya Surface Primer — fills any remaining texture
+4. Wet sand 400-grit; repeat primer if needed
+5. Color coat (acrylic, enamel, or lacquer all work on primed nylon)
+
+**For TPU fenders from FDM:**
+1. FDM TPU has light layer lines on outer surfaces — sand with 220-grit along layer direction, then 400-grit across
+2. Tamiya Surface Primer (flexible formula — regular primer cracks on TPU)
+3. Color coat
 
 ---
 
