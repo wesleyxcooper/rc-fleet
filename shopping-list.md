@@ -42,8 +42,9 @@ lowest-risk starting point; swap components as you develop preferences.
 
 | Item | Part # | Where | Price |
 |---|---|---|---|
-| **Body** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU | material cost only |
-| **Body (alt)** — HPI Nissan Silvia S15 (200mm) | HPI17530 | [AMain](https://www.amainhobbies.com/hpi-nissan-silvia-body-s15-200mm-hpi17530/p106109) | **$34.99** |
+| **Body — Phase 1** — APlastics BMW E36 Coupe (190mm) | — | Learning body. Run this first — absorbs the crash learning curve before the custom body goes on. [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe) | **$49** |
+| **Body — Phase 2** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU after first month of driving. | material cost only |
+| **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | Chassis-side N52 cone magnets + hardware for snap-on body attachment without body clip holes. Required for Phase 2 body (model 4 catch points into the TPU body underside). [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
 | **Wheels** — 26mm touring car offset, 190mm width | — | Standard 1/10 touring offset; confirm hex fitment with D10 | ~$20–30 (not yet verified) |
 | **Drift tires** — Yokomo DRC (carpet, 4-pack) | YOKZR-DRCA | Indoor/carpet compound — right for RC Car World's track. [AMain](https://www.amainhobbies.com/yokomo-drc-competition-drift-tire-4-for-carpet-surface-yokzr-drca/p682057) | **$15.49** |
 | **Drift tires** — Yokomo DRA (asphalt, 4-pack) | YOKZR-DRAA | For outdoor asphalt sessions. [AMain](https://www.amainhobbies.com/yokomo-dra-competition-drift-tire-4-for-asphalt-surface-yokzr-draa/p682052) | **$15.75** |
@@ -55,20 +56,20 @@ lowest-risk starting point; swap components as you develop preferences.
 
 ---
 
-### Body Plan — BMW E36 Cabriolet
+### Body Plan — BMW E36
 
-No production lexan E36 cabriolet RC body exists. APlastics makes the E36 in four production variants (all lexan, all 190mm, all 255–260mm wheelbase, all $49 direct), none of which is a convertible:
+**Phase 1 — APlastics E36 Coupe ($49, [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe)):**
+Lexan, 190mm, 255–260mm wheelbase. Includes front/rear light buckets for LED integration and masking/decal sheets. Run this for the first month of sessions — use it to dial in gyro gain, BEC voltage, battery position, and shock oil. Let it absorb the early learning crashes before the custom body goes on.
+
+**Phase 2 — custom E36 cabriolet (3D printed TPU):**
+No production lexan E36 cabriolet RC body exists. This is a Blender + 3D print build. Other APlastics E36 variants for reference geometry:
 
 | Variant | Link | Price |
 |---|---|---|
-| E36 Coupe | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe) | $49 |
+| **E36 Coupe** — Phase 1 body | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe) | **$49** |
 | E36 Sedan | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-sedan) | $49 |
 | E36 Touring (wagon) | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-touring) | $49 |
 | E36 Wide Body kit | [aplastics-rc.com](https://aplastics-rc.com/products/bmw-e36-widebody) | $72 |
-
-All include front/rear light buckets for LED integration and masking/decal sheets. The Touring is the most unusual drift body and would stand out at a competition. But none is open-top.
-
-**The cabriolet path is Blender + 3D print.** This is the right call given your proficiency.
 
 #### Modeling constraints for Stage-D10 fitment
 
@@ -154,6 +155,8 @@ APlastics bodies include light buckets at front and rear specifically for LED in
 
 Use the **Killerbody kit ($16.99)** — the control box reads steering and throttle via Y-cables on CH1 and CH2 and automatically handles headlights, brake simulation, and turn signals without needing a spare channel. The Pop Star build adds a magnetic contact delivery system: chassis-side N52 satellite magnets carry LED+ to the body, and OEM D10 body post magnets serve as GND return — circuit closes when the body attaches.
 
+**Simpler alternative (CH3 approach):** The D10 chassis exposes a CH3 output from the RF-51 receiver, controlled by the TF-51/RC6GS VR knob. A body-mounted LED module connected via a single plug to CH3 handles on/off/DRL modes without Y-cables or a dedicated controller. The HPI Mustang RTR uses this approach (part 161426, $18.69). For a custom body, a single-plug LED bar or simple LED controller wired to CH3 is the cleanest path if you're designing the body from scratch and don't need brake simulation. The Killerbody approach remains better if you want brake light behavior.
+
 Full wiring documentation, decision tree (gyro variants, BEC voltage vs resistor values), and harness diagrams are in [`rc-popstar/`](rc-popstar/).
 
 For **scale headlights** in an E36 context: the round kidney-area headlights are the defining feature. Either model them as raised lenses with the LED sitting behind, or mill out a lens recess and press-fit a clear resin dome. The latter is more work but looks significantly more realistic.
@@ -172,9 +175,23 @@ For **scale headlights** in an E36 context: the round kidney-area headlights are
 - Aerocatch-style screw-lock mounting hardware
 - Conventional body post mounting options
 
+### Upgrades
+
+Not needed at build time — add progressively as technique develops.
+
+| Upgrade | Part # | Phase | Notes | Price |
+|---|---|---|---|---|
+| **Carbon chassis** — Bingo Wasp Stage D10 | BRC-STGD10-WASP | Phase 3 | Replaces plastic lower deck and upper deck/stay with carbon fiber. All stock hardware transfers. Rear battery position only (mid not supported — rear-only is fine for experienced drivers). [Adrenaline RC Racing](https://www.adrenalinercracing.com/products/bingo-rc-designs-wasp-stage-d10-chassis-for-the-hpi-stage-d10-rc-drift-car) | **$98** |
+| **Ceramic bearings** — Fast Eddy D10 Creator | TFE10470 | Any time | Full kit, 20 bearings (5×8×2.5mm, 5×10×4mm, 10×15×4mm). Drop-in replacement for all stock bearings. [Fast Eddy Bearings](https://www.fasteddybearings.com/products/hpi-stage-d10-creator-edition-drift-ceramic-sealed-bearing-kit) | **~$102** |
+| **Sealed steel bearings** (alt to ceramic) | TFE10469 | Any time | Same sizes, standard sealed steel. Lower cost. | **~$38** |
+| **Anti-roll bars** | HPI option parts | After Phase 1 | Front and rear mount points are reserved on the chassis; bars sold separately. Check HPI's Stage-D10 options list. | TBD |
+| **Shock oil** | — | After Phase 1 | Stock oil is 150cst. Try softer (100cst) on low-grip carpet; stiffer (200cst) for higher grip or more planted rear. | ~$8–12 |
+
 ### Stage-D10 Build Total
 
 Using verified prices where available. Servo estimated at $55 (HPI native, RC Car World price unknown). Wheels estimated at $25.
+
+**Phase 1 (run first):**
 
 | Category | Item | Price |
 |---|---|---|
@@ -186,15 +203,30 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Radio + RX | Radiolink RC6GS V3 + R7FG | $74.99 |
 | Battery | Gens Ace 2S LiHV 4200mAh | $49.99 |
 | Charger | Dual 10A LiPo balance charger | $68.99 |
-| Body | HPI Silvia S15 200mm | $34.99 |
+| Body | APlastics E36 Coupe (Phase 1 learning body) | $49.00 |
 | Wheels | (estimate) | ~$25.00 |
 | Tires × 2 | DRC carpet + DRA asphalt | $31.24 |
 | Tape | Yokomo mounting tape | $4.29 |
 | Pinion | (estimate) | ~$7.00 |
 | LED system | Killerbody 48102 + N52 magnets + resistors | ~$27 |
-| **Total** | | **~$771** |
+| **Phase 1 Total** | | **~$785** |
 
-Swap D-Box3 Lite → Yokomo DP-302 V4 ($75.99) adds $46. Swap Silvia S15 body → 3D-printed E36 cabriolet removes the $34.99 body line (material cost only).
+**Phase 2 (custom body, after first month of driving):**
+
+| Category | Item | Price |
+|---|---|---|
+| Body | Custom TPU E36 cabriolet | material cost only |
+| Magnetic body mount | HPI 161055 Universal Magnetic Body Mount Set | $25.19 |
+| **Phase 2 additions** | | **~$25 + filament** |
+
+**Phase 3 (carbon chassis, when ready to compete):**
+
+| Category | Item | Price |
+|---|---|---|
+| Carbon chassis | Bingo Wasp Stage D10 | $98.00 |
+| **Phase 3 additions** | | **$98** |
+
+Swap D-Box3 Lite → Yokomo DP-302 V4 ($75.99) adds $46. Phase 3 carbon chassis swap is done at the same time the custom body goes on — one teardown instead of two.
 
 ---
 
@@ -307,5 +339,13 @@ one quart of fuel ($14.75) + starter set ($32.99) + two glow plugs ($23.98).
 3. **Order D10 chassis + motor + gyro** once servo availability is confirmed. ESC can follow
    when XD10 Pro comes back in stock (or substitute Hobbywing 10BL120 as a stop-gap).
 4. **Build electronics into D10** before buying body/wheels — verify fit and function first.
-5. **LED system:** bench-test Killerbody 48102 with R7FG before cutting the body for housings. Set XD10 Pro BEC voltage (item 1G), then select resistor values from the table in `rc-popstar/docs/build-decisions.md`. Measure KB48102 port output before committing to resistor values.
-6. **Wiring docs:** full harness diagrams, gyro variant channel maps, and decision tree are in [`rc-popstar/`](rc-popstar/).
+5. **Phase 1 — run the APlastics E36 Coupe** for the first month. Learn to initiate and hold
+   drifts. Tune gyro gain, BEC voltage, battery position, and shock oil on this body. Let it
+   absorb the early crashes before the custom body goes on.
+6. **LED system:** bench-test Killerbody 48102 with R7FG before cutting the body for housings. Set XD10 Pro BEC voltage (item 1G), then select resistor values from the table in `rc-popstar/docs/build-decisions.md`. Measure KB48102 port output before committing to resistor values.
+7. **Phase 2 — design and print the custom E36 cabriolet** once you understand how the car
+   behaves. Order HPI 161055 magnetic body mount set; model 4 catch points into the body
+   underside. See `rc-popstar/` for the full wiring and magnet contact design.
+8. **Phase 3 — carbon chassis** when ready to compete. Order Bingo Wasp Stage D10 (~$98,
+   Adrenaline RC Racing). Do this swap at the same time the custom body goes on.
+9. **Wiring docs:** full harness diagrams, gyro variant channel maps, and decision tree are in [`rc-popstar/`](rc-popstar/).
