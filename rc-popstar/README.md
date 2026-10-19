@@ -34,7 +34,7 @@
 Version-controlled build documentation for **Pop Star** — a custom HPI Stage-D10
 1/10 RWD electric drift car.
 
-Body: APlastics E36 Coupe (Phase 1) → custom BMW E36 cabriolet in TPU, Lila Metallic (Phase 2)
+Body: 24K RC Technology E36 M3 TAF21000 (Phase 1) → custom E36 cabriolet, modular print + aluminum panel skins, Lila Metallic (Phase 2)
 Electronics: Hobbywing XD10 Pro · HPI FLX-D10 10.5T · Killerbody LED system
 Venue: RC Car World, Cinnaminson NJ (indoor drift competition + practice)
 

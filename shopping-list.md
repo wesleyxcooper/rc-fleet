@@ -42,7 +42,7 @@ lowest-risk starting point; swap components as you develop preferences.
 
 | Item | Part # | Where | Price |
 |---|---|---|---|
-| **Body — Phase 1** — APlastics BMW E36 Coupe (190mm) | — | Learning body. Run this first — absorbs the crash learning curve before the custom body goes on. [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe) | **$49** |
+| **Body — Phase 1** — 24K RC Technology E36 M3 (TAF21000, 260mm) | TAF21000 | Officially licensed E36 M3. Multi-piece accessory ecosystem sold separately (see Body Plan). Set chassis to 260mm before drilling body posts. [AMain](https://www.amainhobbies.com/24k-rc-technology-1-10-bmw-e36-m3-drift-body-clear-260mm-wheelbase-taf21000/p1658357) · [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) | **$109.99** |
 | **Body — Phase 2** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU after first month of driving. | material cost only |
 | **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | Chassis-side N52 cone magnets + hardware for snap-on body attachment without body clip holes. Required for Phase 2 body (model 4 catch points into the TPU body underside). [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
 | **Wheels** — 26mm touring car offset, 190mm width | — | Standard 1/10 touring offset; confirm hex fitment with D10 | ~$20–30 (not yet verified) |
@@ -58,28 +58,57 @@ lowest-risk starting point; swap components as you develop preferences.
 
 ### Body Plan — BMW E36
 
-**Phase 1 — APlastics E36 Coupe ($49, [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe)):**
-Lexan, 190mm, 255–260mm wheelbase. Includes front/rear light buckets for LED integration and masking/decal sheets. Run this for the first month of sessions — use it to dial in gyro gain, BEC voltage, battery position, and shock oil. Let it absorb the early learning crashes before the custom body goes on.
+**Phase 1 — 24K RC Technology E36 M3 (TAF21000, $109.99):**
+Officially licensed lexan E36 M3 coupe, 260mm wheelbase, 191mm front / 192mm rear. Run this first to dial in gyro gain, BEC voltage, battery position, and shock oil. Set the D10 chassis to 260mm before fitting — the D10 uses magnetic body mounts (HPI 161055), not body clip holes. The 24K body has pre-cut holes; use the Aerocatch-style screw-lock adapter from 161055 through those holes to get the magnetic snap-on system. Accessories sold separately from [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) or [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm):
 
-**Phase 2 — custom E36 cabriolet (3D printed TPU):**
-No production lexan E36 cabriolet RC body exists. This is a Blender + 3D print build. Other APlastics E36 variants for reference geometry:
+| Part # | Accessory | Price | Link |
+|---|---|---|---|
+| 24K2102 | Light buckets — standard E36 | €28.90 | [AMain](https://www.amainhobbies.com/24k-rc-technology-1-10-bmw-e36-m3-light-buckets-set-front-rear-taf21002/p1658359) |
+| 24K2103 | Light buckets — GR Works E36 | €28.90 | [drifted.nl](https://www.drifted.nl/en/lights-buckets-for-bmw-m3-e36-gr-works-version.html) |
+| 24K2104 | Rear view mirrors | €12.10 | [rc-arlos.com](https://rc-arlos.com/e36-serie-3-outside-mirrors.html) |
+| 24K2105 | Roof spoiler | €22.70 | [drifted.nl](https://www.drifted.nl/en/roof-spoiler-for-bmw-m3-e36.html) |
+| 24K2106 | Exhaust | €14.65 | [rc-arlos.com](https://rc-arlos.com/e36-serie-3-exhaust.html) |
+| 24K2107 | Fog lights | €19.80 | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
+| 24K2108 | Side marker/flashing buckets | €12.50 | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
+| 24K2109 | Rear spoiler | €23.70 | [drifted.nl](https://www.drifted.nl/en/rear-spoiler-for-bmw-m3-e36.html) |
+| 24K2110 | Bumper air intake | €16.50 | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
+| 24K2111 | Bumper grille | €12.90 | [aussiehobbies.com.au](https://www.aussiehobbies.com.au/products/rc-arlos-e36-m3-bumper-grill) |
+| 24K2112 | Light lenses — standard E36 | — | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
+| 24K2113 | Light lenses — GR Works | — | [Elite Drift Shop](https://www.elitedriftshop.com/en/shop/24k-rc-technology-gr-works-e36-light-lenses-taf21013/) |
+| 24K2114 | Hood air intakes | — | [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm) |
+| GWN0000 | Wide body kit V1 | $59.99 | [supergdrift.com](https://supergdrift.com/products/bmw-m3-e36-wide-body-bodykit-1-10-drift-body-shell-24k-gwn0000) |
 
-| Variant | Link | Price |
+**Phase 2 — custom E36 cabriolet (modular 3D print + aluminum panel skins):**
+No production lexan E36 cabriolet body exists. Design approach: printed inner structure (roll cage, chassis mounts, wheel arches, dashboard, interior) with aluminum sheet panel skins formed over printed forming bucks for flat/single-curve panels (hood, doors, roof). Compound-curve parts (overfender arches, front bumper, rear valance) print directly in TPU. Panels develop character and battle scars over time.
+
+**Design starting point — 1:30 E36 Cabrio model scaled to 1:10:**
+Scale the YouMagine E36 Cabrio 1994 model (1:30) by ×3 uniform in Blender to reach 1:10. The body proportions, interior, and panel geometry are correct at any scale — multiply all axes by 3.0. Supplement with a 3D scan of the physical D10 chassis (Polycam/KIRI Engine) to establish fitment geometry: wheel arch positions, floor clearance, and magnetic mount catch-point locations. See workflow notes below.
+
+**Phase 2 materials — aluminum panel skins:**
+
+| Material | Thickness | Source | Approx. cost |
+|---|---|---|---|
+| **K&S Engineering aluminum sheet** | 0.016" (0.4mm) | Ace Hardware, hobby shops, [Amazon](https://www.amazon.com/s?k=K%26S+Engineering+aluminum+sheet+0.016) | ~$6–8 per 4"×10" sheet |
+| Aluminum flashing roll (alt) | 0.019" (0.5mm) | Home Depot / Lowe's roofing section | ~$18 for 10ft roll |
+
+Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
+
+**Design references:**
+
+| Design | Link | Notes |
 |---|---|---|
-| **E36 Coupe** — Phase 1 body | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-coupe) | **$49** |
-| E36 Sedan | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-sedan) | $49 |
-| E36 Touring (wagon) | [aplastics-rc.com](https://aplastics-rc.com/products/aplastics-e36-touring) | $49 |
-| E36 Wide Body kit | [aplastics-rc.com](https://aplastics-rc.com/products/bmw-e36-widebody) | $72 |
+| **Project Archive Object 001** — 180SX modular RC body | [youmagine.com](https://youmagine.com/designs/308aaef2-91ef-491b-a6ea-b6158de1d04b) · [cults3d.com](https://cults3d.com/en/3d-model/game/project-archive-object-001-modular-180sx-inspired-1-10-drift-rc-body-kit) | $20. Inner frame geometry, aluminum skin approach, TPU flexure hinges. Primary design reference. |
+| **1:10 RC E30 Drift Car** — full RC car with cabriolet body | [youmagine.com](https://youmagine.com/designs/86fa803e-46ad-40c4-a6eb-54f078b35f61) | Paid. 139 STL files. E30 cabriolet body (13 parts: windshield, fenders, mirrors, windows, rear end), roll cage, decorative engine, front MacPherson suspension. Body part breakdown is the closest reference to the E36 cabriolet approach. Chassis ignored — keeping D10. |
+| **BMW E36 Cabrio 1994 Printable Car** — body geometry only | [youmagine.com](https://youmagine.com/designs/f5554169-77c1-4480-853f-adf31664147a) | Paid. 1:30 scale — scale ×3 to reach 1:10. Has interior. Body geometry source for the custom build. |
 
 #### Modeling constraints for Stage-D10 fitment
 
 | Parameter | Value |
 |---|---|
 | Body width (at wheel arch) | 190mm max (standard 1/10 touring class) |
-| Wheelbase | 255–260mm for APlastics E36 spec; D10 adjusts 246–264mm |
-| Body post hole diameter | 6mm |
-| Body post positions | Standard 1/10 touring; measure from your D10 before drilling |
-| Wheel arch clearance | Minimum 5mm gap from tire at full droop + full lock; 3D printed bodies need more margin than lexan |
+| Wheelbase | D10 adjustable 246–264mm; target 260mm to match TAF21000 |
+| Magnetic catch points | 4× 10mm diameter recesses, ~2mm deep, on body underside at D10 post locations — measure from your built D10 before modeling |
+| Wheel arch clearance | Minimum 5mm gap from tire at full droop + full lock |
 | Wall thickness (FDM) | 1.5–2mm for TPU; 2mm for PETG |
 | Recommended filament | TPU (flexible, impact-resistant, paintable) — closest in behavior to lexan. PETG as fallback. |
 
@@ -92,15 +121,29 @@ No production lexan E36 cabriolet RC body exists. This is a Blender + 3D print b
 - [The Bavarian MW E36 — MakerWorld](https://makerworld.com/en/models/891006) — full RC platform build on a 3D-printed E36 body; has a build video. Useful for seeing how a printed body integrates with RC hardware.
 - [BMW E36 BN Sports body kit — Cults3D](https://cults3d.com/en/3d-model/game/bodykit-bmw-e36-coupe-bn-sports-8-pieces) — 8-piece widebody kit in multiple scales including 1/10. Not RC-specific but fender/bumper geometry is useful reference.
 
-#### Workflow
+#### Workflow — 1:30 model → 1:10 printable modular body
 
-1. Use APlastics E36 Coupe dimensions as the baseline (425mm L × 190mm W × 118mm H, 259mm WB) — chop the roof in Blender
-2. Add convertible-style beltline, soft top surround if desired, and the open cockpit
-3. Model the roll cage as a separate body, designed to fit inside the cabin cutout
-4. Add body post holes (6mm) at the correct 1/10 touring positions — measure your D10 first, or use the APlastics specs as a guide
-5. Shell/solidify to 1.5–2mm for TPU
-6. Slice with supports under wheel arches only; print body in sections if it exceeds your bed size
-7. LED channels can be built into the front bumper and rear valance rather than using separate light buckets
+1. **Scale to 1:10** — import the YouMagine E36 Cabrio 1:30 model into Blender. Scale all geometry by ×3 uniform. Verify against a known E36 dimension (wheelbase 2700mm → should read 270mm at 1:10 after scale; the D10 chassis is 260mm, so minor horizontal trim may follow in a later step applied to the body only).
+2. **Import D10 chassis scan** — scan the physical built D10 chassis with Polycam or KIRI Engine. Import into Blender as a reference object. Position the scaled body geometry over the chassis scan to identify what needs adjustment: wheel arch positions, floor clearance, front/rear overhang.
+3. **Isolate what you need** — in the scaled E36 model, hide or delete anything internal that won't be visible or structural: door internals, engine bay detail under hood, glass geometry. Keep: outer body panels, dashboard, seats, roll hoop/cage area.
+4. **What to make from aluminum vs. what to print:**
+
+   | Feature | Method | Notes |
+   |---|---|---|
+   | Hood, doors, roof panel, rear deck | Aluminum sheet over forming buck | Single-curve or near-flat; buck is the panel mesh exported with a solid PLA backing |
+   | Character lines / body creases | Forming buck with crease baked in | Score the back of the aluminum along the crease before pressing; it folds cleanly into the line. Trim excess with snips, file edges. |
+   | Overfender arches, bumper fascia | Print directly in TPU | Compound curves that wrap in two axes can't be pressed flat from sheet |
+   | Hardtop (if added later) | Print in PETG or ASA | Full rigid shell; model character lines directly in Blender |
+   | Roll cage, floor, chassis tabs | Print in PLA/ASA | Rigid structure; painted or left natural |
+   | Interior (dash, seats) | Print in PLA/ASA or PETG | Visible through open top — worth detailing |
+   | Flexible seals, grommets, edge trim | Print in TPU | |
+
+5. **Forming bucks** — for each aluminum panel, duplicate the panel surface mesh in Blender, add a Solidify modifier (~5mm backing) to make it printable, export as STL, print in PLA. Press K&S 0.016" aluminum sheet over the buck by hand or with a rubber mallet for tighter curves. Trim excess with snips; file edges smooth. The aluminum holds the pressed shape. Self-etching primer → color coat → skip clear coat for the battle-scar look.
+6. **Attaching printed pieces to aluminum panels** — for overfenders and any printed part that joins an aluminum skin: model TPU clip tabs into the printed part that hook over the aluminum edge (no fasteners, removable). For pieces that take direct impact, use M1.4–M2 machine screws into heat-set threaded inserts. Small aluminum pop rivets (1.5–2mm) are also an option and look appropriate on a drift build.
+7. **3D scan for accessories** — to fit the 24K Phase 1 accessories (light buckets, exhaust, spoilers) to the custom body: spray shiny PVC parts with chalk spray first, scan with Polycam/KIRI Engine, import into Blender. Use the scan as reference for modeling recesses or mounting features in the printed structure.
+8. **Magnetic catch points** — model 4 shallow recesses (10mm diameter, ~2mm deep) into the body underside at the D10 magnetic post locations. Measure from your built D10 at 260mm wheelbase before finalizing.
+9. **LED integration** — model round headlight recesses directly into the front panel; rear cluster housings into the tail section. No separate buckets needed.
+10. **Interior and engine** — keep the scaled dash and seats from the 1:30 model; add/refine roll cage tubes as curves with bevel. Decorative engine visible through the hood if you model the hood as openable (TPU flexure hinge on the hood edge).
 
 ---
 
@@ -140,7 +183,7 @@ This is the opposite of conventional model painting. All Tamiya PS, Parma, and s
 
 ### Working Lights
 
-APlastics bodies include light buckets at front and rear specifically for LED installation. The 3D-printed E36 cabriolet body should have channels or housings modeled in for the same purpose.
+The 24K E36 M3 Phase 1 body uses separate light bucket accessories (24K2102 for standard E36, 24K2103 for GR Works). The Phase 2 custom cabriolet body should have headlight recesses and rear cluster housings modeled directly into the structure — no separate buckets needed since you're designing from scratch.
 
 **LED kits (verified at AMain):**
 
@@ -203,13 +246,13 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Radio + RX | Radiolink RC6GS V3 + R7FG | $74.99 |
 | Battery | Gens Ace 2S LiHV 4200mAh | $49.99 |
 | Charger | Dual 10A LiPo balance charger | $68.99 |
-| Body | APlastics E36 Coupe (Phase 1 learning body) | $49.00 |
+| Body | 24K RC Technology E36 M3 (TAF21000) | $109.99 |
 | Wheels | (estimate) | ~$25.00 |
 | Tires × 2 | DRC carpet + DRA asphalt | $31.24 |
 | Tape | Yokomo mounting tape | $4.29 |
 | Pinion | (estimate) | ~$7.00 |
 | LED system | Killerbody 48102 + N52 magnets + resistors | ~$27 |
-| **Phase 1 Total** | | **~$785** |
+| **Phase 1 Total** | | **~$846** |
 
 **Phase 2 (custom body, after first month of driving):**
 
