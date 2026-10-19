@@ -112,7 +112,27 @@ Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S s
 | Wall thickness (FDM) | 1.5–2mm for TPU; 2mm for PETG |
 | Recommended filament | TPU (flexible, impact-resistant, paintable) — closest in behavior to lexan. PETG as fallback. |
 
-**Roll cage:** Design as a separate piece that drops into the cockpit from above. Print in a rigid filament (PETG or PLA) since it's structural/aesthetic and doesn't need to flex. It anchors to the body posts or to standoffs glued to the body floor area. Visible through the open top — this is the feature, not a problem.
+#### Body architecture — inner frame + swappable panel system
+
+The inner frame is the permanent structural skeleton of the body. It mounts to the D10 chassis via the magnetic catch points, carries the roll cage, windshield frame, A-pillars, dashboard, and interior. Outer body panels (fenders, hood, doors, roof) mount to the frame at consistent attachment points and are individually removable and swappable.
+
+**Inner frame (permanent):**
+- Print in rigid PLA/ASA
+- Roll cage drops into the cockpit from above, visible through the open top
+- Magnetic catch points (4×) built into the floor tabs
+- All panel attachment points defined here — consistent screw hole positions or clip geometry across every panel variant
+
+**Swappable panel variants (examples for front fenders):**
+
+| Variant | Material | Impact behavior | Notes |
+|---|---|---|---|
+| Stock E36 arch | Aluminum sheet over forming buck | Dents, scratches, develops character | Single-curve; forming buck approach |
+| E46 arch baked-in | TPU (printed) | Bounces back; paint scratches only | E46 arch profile modeled in Blender, printed as one piece, mounts to same frame points |
+| Any other geometry | TPU or aluminum | Varies | Same mount interface — cross-compatible with all variants |
+
+**Key principle:** The panel attachment interface is standardized. Every fender variant uses identical mount point positions and hardware — that's what makes them interchangeable. Model this standard in Blender before modeling any panels, then all panels reference it. Forming bucks are only needed for aluminum variants; printed variants need no buck.
+
+**TPU panels in drift events:** TPU rebounds from barrier contact and car-to-car hits without permanent deformation. Paint on the exterior surface scratches and chips but the panel shape returns. A hard direct impact can crack thin walls, but normal drift contact will not permanently damage TPU panels.
 
 #### Reference STLs to study (not cabriolet, but E36 modeling reference)
 
@@ -126,17 +146,19 @@ Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S s
 1. **Scale to 1:10** — import the YouMagine E36 Cabrio 1:30 model into Blender. Scale all geometry by ×3 uniform. Verify against a known E36 dimension (wheelbase 2700mm → should read 270mm at 1:10 after scale; the D10 chassis is 260mm, so minor horizontal trim may follow in a later step applied to the body only).
 2. **Import D10 chassis scan** — scan the physical built D10 chassis with Polycam or KIRI Engine. Import into Blender as a reference object. Position the scaled body geometry over the chassis scan to identify what needs adjustment: wheel arch positions, floor clearance, front/rear overhang.
 3. **Isolate what you need** — in the scaled E36 model, hide or delete anything internal that won't be visible or structural: door internals, engine bay detail under hood, glass geometry. Keep: outer body panels, dashboard, seats, roll hoop/cage area.
-4. **What to make from aluminum vs. what to print:**
+4. **What to make from what material:**
 
-   | Feature | Method | Notes |
+   | Part | Material | Notes |
    |---|---|---|
-   | Hood, doors, roof panel, rear deck | Aluminum sheet over forming buck | Single-curve or near-flat; buck is the panel mesh exported with a solid PLA backing |
-   | Character lines / body creases | Forming buck with crease baked in | Score the back of the aluminum along the crease before pressing; it folds cleanly into the line. Trim excess with snips, file edges. |
-   | Overfender arches, bumper fascia | Print directly in TPU | Compound curves that wrap in two axes can't be pressed flat from sheet |
-   | Hardtop (if added later) | Print in PETG or ASA | Full rigid shell; model character lines directly in Blender |
-   | Roll cage, floor, chassis tabs | Print in PLA/ASA | Rigid structure; painted or left natural |
-   | Interior (dash, seats) | Print in PLA/ASA or PETG | Visible through open top — worth detailing |
-   | Flexible seals, grommets, edge trim | Print in TPU | |
+   | Inner frame (floor, mount tabs, A-pillars, windshield frame) | PLA/ASA | Rigid skeleton; define panel attachment interface here first |
+   | Roll cage | PLA/ASA | Drops into cockpit from above; visible through open top |
+   | Interior (dash, seats) | PLA/ASA or PETG | Worth detailing — visible |
+   | Hood, doors, roof panel, rear deck | Aluminum sheet over forming buck | Single-curve or near-flat panels; buck exported from Blender mesh + Solidify modifier |
+   | Fender — stock arch variant | Aluminum sheet over forming buck | Same mount interface as printed variant |
+   | Fender — E46 arch variant (or any other) | TPU printed | Arch baked into the geometry; bounces back from impacts; same mount interface |
+   | Bumper fascia, rear valance | TPU printed | Compound curves; prints directly |
+   | Hardtop (optional) | PETG or ASA | Full rigid shell; character lines modeled in Blender |
+   | Flexible seals, grommets, edge trim | TPU | |
 
 5. **Forming bucks** — for each aluminum panel, duplicate the panel surface mesh in Blender, add a Solidify modifier (~5mm backing) to make it printable, export as STL, print in PLA. Press K&S 0.016" aluminum sheet over the buck by hand or with a rubber mallet for tighter curves. Trim excess with snips; file edges smooth. The aluminum holds the pressed shape. Self-etching primer → color coat → skip clear coat for the battle-scar look.
 6. **Attaching printed pieces to aluminum panels** — for overfenders and any printed part that joins an aluminum skin: model TPU clip tabs into the printed part that hook over the aluminum edge (no fasteners, removable). For pieces that take direct impact, use M1.4–M2 machine screws into heat-set threaded inserts. Small aluminum pop rivets (1.5–2mm) are also an option and look appropriate on a drift build.
