@@ -146,8 +146,8 @@ The inner frame is the permanent structural skeleton of the body. It mounts to t
 
 - [BMW E36 widebody drift — Printables](https://www.printables.com/model/1771017-bmw-e36-widebody-drift) — full E36 widebody by Mirco Slepko, free, updated July 2026. Good geometry reference even if not a cab.
 - [BMW M3 Liberty Walk RC Drift 1/10 — Thingiverse](https://www.thingiverse.com/thing:4898937) — 1/10 scale drift body with lights integrated.
-- [The Bavarian MW E36 — MakerWorld](https://makerworld.com/en/models/891006) — full RC platform build on a 3D-printed E36 body; has a build video. Useful for seeing how a printed body integrates with RC hardware.
-- [BMW E36 BN Sports body kit — Cults3D](https://cults3d.com/en/3d-model/game/bodykit-bmw-e36-coupe-bn-sports-8-pieces) — 8-piece widebody kit in multiple scales including 1/10. Not RC-specific but fender/bumper geometry is useful reference.
+- [The Bavarian MW E36 — MakerWorld](https://makerworld.com/en/models/2891006-the-bavarian-mw-e36) — full RC platform build on a 3D-printed E36 body; has a build video. Useful for seeing how a printed body integrates with RC hardware.
+- [BMW E36 BN Sports body kit — Cults3D](https://cults3d.com/en/3d-model/game/bodykit-bmw-e36-coupe-bn-sports-8-pieces-imprimable-en-3d-stance-drift) — 8-piece widebody kit in multiple scales including 1/10. Not RC-specific but fender/bumper geometry is useful reference.
 
 #### Workflow — 1:30 model → 1:10 printable modular body
 
@@ -211,7 +211,7 @@ Measure from the physical built D10 with calipers. Model these as a simple param
 7. **Export each component as STL**: right-click component → Save As Mesh → STL. Set refinement to Fine (0.005mm chord deviation, 5° angle tolerance).
 
 **Before sending to print service — validate STL files:**
-- Upload each STL to [Netfabb Online](https://netfabb.autodesk.com) (free) — fixes non-manifold geometry and reports wall thickness issues
+- Validate each STL in **Fusion 360**: Insert → Insert Mesh. Fusion reports non-manifold geometry on import. For a dedicated repair pass: Mesh workspace → Repair → Find and Fix Issues. Alternatively, load into **PrusaSlicer** (free) — it flags non-manifold and open-surface errors before you slice.
 - Check minimum wall thickness is above process minimum (FDM: 1.5mm; SLS: 0.8mm)
 - Confirm part orientation in slicer preview or service preview matches intent
 
