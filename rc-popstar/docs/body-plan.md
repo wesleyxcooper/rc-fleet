@@ -230,6 +230,12 @@ The real-car plan (E46 donor arch grafted to E36 fender via edge-to-edge weld) m
 
 Blender handles organic surface modeling. Fusion 360 handles everything that requires dimensional precision: the mount interface standard, screw holes, clip tabs, frame tabs, tolerances. All Blender geometry imports as a reference mesh — Fusion-native parametric features are built on top of it. This is the step where parts become print-ready and cross-compatible.
 
+**Where thickness is added:**
+- Body panel surfaces (TPU fenders, bumpers, cabriolet structure): apply Blender **Solidify modifier** before exporting OBJ. Fusion 360's "Thicken" command only works on B-Rep surface bodies — Blender OBJs import as mesh bodies and cannot be Thickened natively. Solidify in Blender, export as a solid mesh, Fusion receives it that way.
+- Forming bucks (molds for aluminum panels): apply Solidify in Blender, export as STL, send directly to print service. No Fusion treatment needed — bucks have no precision features.
+- Inner frame: model **entirely in Fusion 360**, not Blender. The inner frame is mostly geometric (rectangular tubes, flat tabs, mount bosses) — model it parametrically in Fusion from the start so the attachment standard is fully native. Import the Blender body panel meshes around it as reference.
+- Clear parts (windshield, lenses): model the full solid geometry in Fusion 360 (not Blender); these require sub-millimeter accuracy for the step shelf, pins, and holes.
+
 ### D10 chassis stub — measure before starting Fusion work
 
 Measure from the physical built D10 with calipers. Model these as a simple parametric B-Rep stub in Fusion — not a full chassis replica, just the critical interfaces.
