@@ -50,6 +50,8 @@ mix to code. This gives the exact color on a small body shell.
 | 2 — Basecoat | BMW 0490 / FE86-403X basecoat, from a BMW-code supplier | 123lack.de sells basecoat in 100 mL cans ([123lack.de](https://www.123lack.de/basislack-bmw-490-lila-metallic-autolack-2-schicht)). Two thin passes, 10-15 min between. |
 | 3 — Clearcoat | Automotive 2K clearcoat, or Tamiya TS-13 Clear | Required — basecoat is not self-sealing. Two coats. |
 
+**Amazon-available source:** "Lila Metallic 490 Automotive Paint – OEM Color Match – For BMW Vehicles" by DipYourCar, [Amazon B0GMRL64MB](https://www.amazon.com/dp/B0GMRL64MB), $21.49 for 2 fl oz. Same workflow as above — needs reducer and clearcoat, requires a spray gun or airbrush; not a rattle can. 2 fl oz is the right quantity for an RC body shell. DipYourCar is primarily a Plasti-Dip brand; their metallic color accuracy is not independently verified, but for RC scale it does not need to be exact.
+
 **Note on TPU compatibility:** Automotive basecoat is flexible when cured and bonds
 well to primed TPU. Apply in thin coats; thick single coats can crack under flex.
 Do not skip the adhesion primer step.
