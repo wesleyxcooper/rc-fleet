@@ -94,6 +94,7 @@ lowest-risk starting point; swap components as you develop preferences.
 | Tamiya Surface Primer (fine) | Blend coat over putty seams + printed parts | Hobby store / Amazon | ~$10 |
 | Squadron Green Putty or Vallejo Plastic Putty | Blend seam between aluminum panel + printed arch | Hobby store | ~$5–8 |
 | Print service (see below) | All printed parts — no home printer | JLCPCB, Craftcloud, Shapeways | See print service table |
+| **Novus Plastic Polish kit** — #1 + #2 + #3, 2 oz each | Polishing SLA clear resin parts (windshield, lenses) to optical clarity | [Amazon NOVUS-PK1-2](https://www.amazon.com/Novus-Plastic-Polish-Cleaning-Set/dp/B07T91SQG7) | **$14.99** |
 
 > Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
 

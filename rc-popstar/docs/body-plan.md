@@ -57,6 +57,39 @@ The D10 Stage launched in late September 2026. No community chassis scan exists 
 
 Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
 
+### Clear parts — windshields and light lenses
+
+Clear optical parts cannot be FDM or SLS printed. Three approaches:
+
+**Option 1 — JLCPCB Transparent 8001 SLA resin (recommended):**
+
+JLCPCB offers "Transparent 8001" as an SLA material. Customer reviews describe "glass-like transparent finish" with no layer lines. Source: [jlc3dp.com](https://jlc3dp.com). Works for windshields, headlight lenses, taillight lenses — anything that needs optical clarity or light transmission. Tolerance ±0.2mm at SLA.
+
+After printing: sand with 1000-grit wet, then 2000-grit, then polish with Novus Plastic Polish #2 then #1. This removes the slight surface haze and achieves near-optical clarity.
+
+For tinted lenses (tail lights, indicators): spray Tamiya transparent red or amber from the inside of the printed lens cavity after polishing — same inside-out tinting logic as lexan.
+
+**Option 2 — Reuse Phase 1 24K light bucket accessories:**
+
+The 24K TAF21002 (standard E36) and TAF21003 (GR Works E36) light bucket sets include the lenses. If you design the Phase 2 body to accept compatible mounting points for these accessories, you get production-quality lens geometry with zero custom work.
+
+Trade-off: the 24K buckets are designed for the E36 M3 coupe body profile. The mounting flange geometry will need to be reverse-referenced and incorporated into the Phase 2 cabriolet design. Scan the Phase 1 buckets with Polycam, import into Blender, model the receiving recesses in the Phase 2 front bumper and rear panel to match.
+
+This is the most practical approach for Phase 2 lights — you already own the buckets by the time you build Phase 2.
+
+**Option 3 — Thin PETG sheet for windshield:**
+
+0.5mm clear PETG sheet can be heat-formed over a printed buck to create a windshield. Source: any FDM filament supplier (e.g. clear PETG sheet from ePlastics, McMaster-Carr). Warp with a heat gun over a PLA/PETG buck printed to the windshield curve. Less optically clear than SLA resin but good enough for a windshield that doesn't need to be optically perfect.
+
+| Part | Recommended approach |
+|---|---|
+| Windshield | SLA Transparent 8001 (model in Blender, print at JLCPCB) — or 0.5mm PETG sheet formed over a buck |
+| Headlight lenses | Reuse Phase 1 24K TAF21002/21003 buckets (design compatible mount points) — or SLA Transparent 8001 |
+| Taillight lenses | SLA Transparent 8001 — tint interior with Tamiya TS-73 (Clear Orange) or TS-74 (Clear Red) |
+| Side windows (hardtop option) | SLA Transparent 8001 or 0.5mm PETG sheet |
+
+---
+
 ### Design references
 
 | Design | Link | Notes |

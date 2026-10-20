@@ -52,16 +52,19 @@ mix to code. This gives the exact color on a small body shell.
 
 **Amazon-available source:** "Lila Metallic 490 Automotive Paint – OEM Color Match – For BMW Vehicles" by DipYourCar, [Amazon B0GMRL64MB](https://www.amazon.com/dp/B0GMRL64MB), $21.49 for 2 fl oz. Same workflow as above — needs reducer and clearcoat, requires a spray gun or airbrush; not a rattle can. 2 fl oz is the right quantity for an RC body shell. DipYourCar is primarily a Plasti-Dip brand; their metallic color accuracy is not independently verified, but for RC scale it does not need to be exact.
 
+**This option is for the Phase 2 printed body only — not for lexan.** Automotive basecoat is rigid when cured and will crack on a flexing lexan body. For the Phase 1 24K TAF21000 lexan body, use Tamiya PS paints only (see Option B / Phase 1 section below).
+
 **Note on TPU compatibility:** Automotive basecoat is flexible when cured and bonds
 well to primed TPU. Apply in thin coats; thick single coats can crack under flex.
 Do not skip the adhesion primer step.
 
 ---
 
-## Option B — Off-shelf Tamiya polycarbonate spray (for lexan; closest to color)
+## Option B — Tamiya PS polycarbonate spray (Phase 1 lexan body — 24K TAF21000)
 
-If switching to an APlastics E36 lexan body instead of the 3D-printed version,
-use Tamiya PS series paints (designed for polycarbonate, applied inside-out).
+For the Phase 1 24K TAF21000 lexan body, use Tamiya PS series paints.
+Applied inside-out (see Phase 1 lexan section below). The closest available
+off-shelf match to BMW 0490 Lila Metallic:
 
 | Product | Code | Character | Match quality |
 | :---- | :---- | :---- | :---- |
@@ -110,13 +113,21 @@ Print white or chrome on the Lila Metallic base. Order from a local sign shop or
 
 Standard RC lexan/polycarbonate bodies are painted **from the inside**. The exterior surface stays clear and untouched. This is the opposite of conventional model painting.
 
+**Prep (required before any paint):**
+
+1. Wash the inside of the body with mild dish soap and warm water. Lexan bodies come with mold release agents and skin oils from handling — these prevent paint adhesion. Rinse thoroughly.
+2. Allow to dry completely. Any moisture under a PS coat will cause lifting and bubbling.
+3. Optional: wipe the paint area with 91%+ isopropyl alcohol on a lint-free cloth, let fully evaporate before painting.
+
+**Do not sand or score the interior of the lexan body.** Sanding is for exterior painting on hard plastics — it causes micro-cracks in polycarbonate under paint, looks worse, and offers no adhesion benefit when using PS paints. Tamiya PS bonds directly to clean bare polycarbonate; no primer is needed.
+
 **Workflow:**
 1. Mask window edges on the exterior with vinyl masking tape or liquid mask.
-2. Spray the interior surface — color coats first, then a white or silver backing layer for opacity.
+2. Spray the interior surface — color coat first, then a white or silver backing layer for opacity.
 3. The paint shows through the clear exterior, giving a glassy depth.
-4. Trim lines are defined by where you masked.
+4. Peel the mask once paint is fully cured (24h minimum).
 
-All Tamiya PS, Parma, and similar lexan spray lines are formulated for this — they flex with the body instead of cracking. Regular spray paint will crack and peel off lexan.
+All Tamiya PS, Parma, and similar lexan spray lines are formulated for this — they flex with the body instead of cracking. Regular spray paint (including automotive basecoat) will crack and peel off lexan.
 
 **Tamiya PS colors for the Lila Metallic look on lexan:**
 
@@ -126,7 +137,18 @@ All Tamiya PS, Parma, and similar lexan spray lines are formulated for this — 
 | **Tamiya Purple Anodized Aluminum** | PS-51 | Strong purple metallic with aluminum effect | Better — more saturated, but still bluer than the BMW color |
 | **Tamiya Iridescent Purple/Green** | PS-46 | Shifts between purple and green at angle | Not a match — iridescent, not metallic purple |
 
-**Tip for PS-51:** spray one coat of PS-51, then back it with a coat of PS-2 (Red) before the black backing layer. The red tint pulls the purple slightly toward magenta for a closer match to Lila Metallic's pink-purple character.
+**Closest rattle-can approach (PS-51 layering, inside-out order):**
+
+For inside-out, the first layer you spray is what shows through the exterior. The last layer is the backing for opacity.
+
+1. PS-51 (Purple Anodized Aluminum) — color coat; first spray, faces the exterior
+2. PS-2 (Red) — tint layer behind PS-51; adds the magenta warmth BMW 0490 has
+3. PS-12 (Silver) or PS-63 (Bright Mica Silver) — metallic backing; enhances flake depth
+4. PS-1 (White) — final opacity coat
+
+This is the closest achievable with rattle cans. It will still lean slightly bluer than the actual BMW color. For exact color on a lexan body, you'd need an airbrush and custom candy mixing (Option C adapted for the inside of the body — Alclad Candy Magenta + Candy Purple over Alclad Chrome, same layers, same inside-out order).
+
+**Phase 1 note:** the 24K TAF21000 is a practice body for tuning — it will take hits. An approximate color match is completely acceptable. If exact color matters most, reserve the effort for the Phase 2 printed body.
 
 **Available at RC Car World** (local, full range stocked): PS series $8–12/can.
 
