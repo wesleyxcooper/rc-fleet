@@ -1,0 +1,123 @@
+metadata:
+  project: RC Pop Star (HPI Stage-D10) — FPV Power Harness
+  description: >-
+    Powers the 5.8GHz analog FPV system (RunCam RC Cadet AIO or equivalent)
+    from the XD10 Pro ESC BEC via a Pololu D24V5F5 5V step-down regulator.
+    BEC is adjustable 5–7.4V; the regulator provides a stable 5V regardless of
+    BEC setting. Skip the regulator only if BEC is confirmed at 5.0V.
+    The FPV link is independent of the RC control system — no radio channels used.
+    See docs/fpv.md for mounting, channel map, and VTX disable procedure.
+
+# TODO:
+#   [ ] Confirm BEC voltage (item 1G on XD10 Pro) before wiring — determines
+#       whether regulator is needed
+#   [ ] Measure RC Cadet lens outer diameter before modeling camera cavity in body
+#   [ ] Add optional inline power switch on W_BEC_REG pin 1 (VCC) for hardware
+#       FPV off — recommended for track use
+#   [ ] Bench-test full FPV system before body install; verify 5V at REG_OUT
+#   [ ] Confirm RunCam RC Cadet pit mode procedure (mode button press cycle)
+
+connectors:
+
+  ESC_BEC:
+    type: "Hobbywing XD10 Pro BEC output"
+    subtype: "Adjustable 5.0–7.4V, 5A continuous"
+    pincount: 2
+    pinlabels:
+      - "VCC (5–7.4V)"
+      - "GND"
+    notes: >
+      BEC voltage is set via programmable item 1G on the XD10 Pro.
+      Source: XD10 Pro manual — hobbywing.com/en/uploads/file/20221012/7cb44bc6cf370ca8bb8ac96c29b6a7e3.pdf
+      Tap from the BEC pigtail or the servo rail — either point carries BEC output.
+      If BEC is confirmed at 5.0V, wire directly to FPV_POWER and skip the regulator.
+
+  REG_IN:
+    type: "Pololu D24V5F5 — input side"
+    subtype: "5V/500mA step-down regulator, 2.9–38V input range"
+    pincount: 2
+    pinlabels:
+      - "VIN (2.9–38V)"
+      - "GND"
+    notes: >
+      Pololu D24V5F5 (pololu.com/product/2843). ~$5.
+      Only needed when BEC is set above 5V. Skip if BEC = 5V: wire W_BEC_REG
+      directly to FPV_POWER instead.
+
+  REG_OUT:
+    type: "Pololu D24V5F5 — output side"
+    subtype: "5V regulated output, up to 500mA"
+    pincount: 2
+    pinlabels:
+      - "VOUT (5.0V regulated)"
+      - "GND"
+    notes: "Verify 5.0V with a multimeter before connecting camera."
+
+  FPV_POWER:
+    type: "FPV AIO unit — power input"
+    subtype: "RunCam RC Cadet (or equivalent AIO camera+VTX)"
+    pincount: 2
+    pinlabels:
+      - "5V"
+      - "GND"
+    notes: >
+      RunCam RC Cadet: camera + 5.8GHz VTX in one unit (~$30).
+      Total draw ~300–500mA at 5V. Includes coax antenna lead.
+      Pit mode (0mW): press mode button to cycle to 0mW output — no RF while
+      still powered. Alternatively use an inline switch on W_REG_CAM pin 1.
+
+  ANT:
+    type: "VTX antenna"
+    subtype: "5.8GHz linear dipole (ships with RC Cadet) or circular polarized upgrade"
+    pincount: 1
+    pinlabels:
+      - "RF (5.8GHz)"
+    notes: >
+      Route coax from the AIO unit to the antenna mount point on the body exterior.
+      Phase 1 (lexan): exit through a small hole in the roof or A-pillar area.
+      Phase 2 (cabriolet): route behind the roll cage; antenna sits above the
+      roll cage top rail. Design a clip guide into the roll cage when modeling.
+      Indoor 25mW: linear dipole sufficient. Replace with circular polarized
+      (e.g. TrueRC Singularity) if interference from other cars becomes an issue.
+
+cables:
+
+  W_BEC_REG:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["VCC", "GND"]
+    length: 0.15 m
+    notes: >
+      ESC BEC to regulator input. 24 AWG stranded.
+      Optional: add a small inline slide switch on the VCC wire here for a
+      hardware FPV power cut independent of pit mode — recommended for track use.
+
+  W_REG_CAM:
+    wirecount: 2
+    colors: [RD, BK]
+    wirelabels: ["5V", "GND"]
+    length: 0.15 m
+    notes: "Regulator 5V output to AIO power input. 26 AWG fine-strand."
+
+  W_ANT:
+    wirecount: 1
+    colors: [WH]
+    wirelabels: ["RF coax"]
+    length: 0.20 m
+    notes: >
+      Coax from AIO unit VTX output to antenna mount point on body exterior.
+      Length 200mm typical — adjust to route. Keep bends gentle; coax kinks attenuate signal.
+
+connections:
+
+  - - ESC_BEC: [1, 2]
+    - W_BEC_REG: [1, 2]
+    - REG_IN: [1, 2]
+
+  - - REG_OUT: [1, 2]
+    - W_REG_CAM: [1, 2]
+    - FPV_POWER: [1, 2]
+
+  - - FPV_POWER: [1]
+    - W_ANT: [1]
+    - ANT: [1]

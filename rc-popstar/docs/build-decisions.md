@@ -149,9 +149,47 @@ CH4 optional for remote gain — same as Lite.
 
 ---
 
+---
+
+## Decision 5 — FPV system
+
+```mermaid
+flowchart TD
+    A[FPV?] --> B[Analog 5.8GHz\nRunCam RC Cadet AIO\n~$90 total]
+    A --> C[Digital HDZero/DJI\n~$300+ total]
+    A --> D[None]
+
+    B --> B1[Low latency ~20ms\nWorks at RC car speeds\nEV800D box goggles or monitor\nfpv-harness.wv]
+    C --> C1[HD image quality\nHigher latency\nOverkill for drift speeds]
+    D --> D1[No extra wiring needed]
+```
+
+**Recommended: analog 5.8GHz.** The car's speeds and distances don't benefit from digital image quality, and analog latency (~20ms) is equal to or better than most digital options.
+
+**BEC power budget with FPV added:**
+
+| Consumer | Current draw |
+|---|---|
+| Servo (SX-12MGLP, no-load) | ~150mA |
+| Killerbody 48102 + 4× LEDs | ~200mA |
+| FPV AIO (RunCam RC Cadet) | ~400mA |
+| Gyro (Yokomo DP-302 V4) | ~60mA |
+| **Total** | **~810mA** |
+
+XD10 Pro BEC is rated 5A continuous — 4.2A headroom. No concern.
+
+**Channel map:** FPV uses no RC channels. The 5.8GHz video link is independent of the 2.4GHz RC control link. Channel assignments in Variants A–C above are unchanged.
+
+**Harness:** `fpv-harness.wv` — BEC → Pololu D24V5F5 regulator → RunCam RC Cadet.
+
+**Full FPV guide:** `docs/fpv.md` — mounting by phase, VTX disable procedure, BEC regulator decision, integration notes.
+
+---
+
 ## Open items before first run
 
 - [ ] Pick gyro variant (see Decision 1 above)
+- [ ] Decide FPV: install analog system now, or defer to Phase 2 body (see Decision 5)
 - [ ] Set XD10 Pro BEC voltage (item 1G) and record the value
 - [ ] Bench-test KB48102 port output voltage/current (see Decision 4 note)
 - [ ] Finalize resistor values in `body-harness.wv` based on BEC + KB48102 measurements
@@ -171,3 +209,5 @@ CH4 optional for remote gain — same as Lite.
 | HPI D-Box3 Lite/Pro | [hpiracing.com](https://www.hpiracing.com/assets/documents/manuals/d_box3_gyro/161068_006_sg_dbox3_gyro_en.pdf) | PDF (text) |
 | Yokomo DP-302 V4 | [teamyokomo.com](https://teamyokomo.com/downloadfiles/!02!MANUAL/!02!ELECTRONICS/DP-302V4_User_manual.pdf) | PDF (scanned image, read via browser) |
 | Killerbody 48102 LED kit | [killerbodyrc.com](http://www.killerbodyrc.com/Prod_image/instructions/48102.PDF) | PDF (text) |
+| RunCam RC Cadet (FPV AIO) | [runcam.com](https://www.runcam.com/cameras/rc-cadet/) | Product page |
+| Pololu D24V5F5 regulator | [pololu.com](https://www.pololu.com/product/2843) | Product page |

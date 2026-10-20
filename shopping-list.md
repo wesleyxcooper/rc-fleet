@@ -61,8 +61,7 @@ lowest-risk starting point; swap components as you develop preferences.
 
 ### Body Plan — BMW E36
 
-**Phase 1 — 24K RC Technology E36 M3 (TAF21000, $109.99):**
-Officially licensed lexan E36 M3 coupe, 260mm wheelbase, 191mm front / 192mm rear. Run this first to dial in gyro gain, BEC voltage, battery position, and shock oil. Set the D10 chassis to 260mm before fitting — the D10 uses magnetic body mounts (HPI 161055), not body clip holes. The 24K body has pre-cut holes; use the Aerocatch-style screw-lock adapter from 161055 through those holes to get the magnetic snap-on system. Accessories sold separately from [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) or [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm):
+**Phase 1 — 24K RC Technology E36 M3 (TAF21000, $109.99):** Officially licensed lexan E36 M3 coupe, 260mm wheelbase. Set chassis to 260mm before fitting. Accessories sold separately from [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) or [yeda-shop.eu](https://www.yeda-shop.eu/E36-M3-c42_224_3.htm):
 
 | Part # | Accessory | Price | Link |
 |---|---|---|---|
@@ -83,11 +82,7 @@ Officially licensed lexan E36 M3 coupe, 260mm wheelbase, 191mm front / 192mm rea
 
 > **Also at RC Car World (local, verified in stock):** [Fog light buckets (TAF21007) $21.99](https://rccarworld.com/product/24k-rc-technology-1-10-bmw-e36-m3-fog-light-buckets/) · [Roof spoiler (TAF21005) $25.99](https://rccarworld.com/product/24k-rc-technology-1-10-bmw-e36-m3-roof-spoiler-taf21005/) · [Side mirrors (TAF21004) $14.00](https://rccarworld.com/on-sale/drift-parts/) · [Hood air intakes (TAF21014) $19.00](https://rccarworld.com/on-sale/drift-parts/) · [GR Works light lenses (TAF21013) $65.99](https://rccarworld.com/on-sale/drift-parts/). Main body (TAF21000) and standard light buckets (TAF21002) not stocked online — order from AMain.
 
-**Phase 2 — custom E36 cabriolet (modular 3D print + aluminum panel skins):**
-No production lexan E36 cabriolet body exists. Design approach: printed inner structure (roll cage, chassis mounts, wheel arches, dashboard, interior) with aluminum sheet panel skins formed over printed forming bucks for flat/single-curve panels (hood, doors, roof). Compound-curve parts (overfender arches, front bumper, rear valance) print directly in TPU. Panels develop character and battle scars over time.
-
-**Design starting point — 1:30 E36 Cabrio model scaled to 1:10:**
-Scale the YouMagine E36 Cabrio 1994 model (1:30) by ×3 uniform in Blender to reach 1:10. The body proportions, interior, and panel geometry are correct at any scale — multiply all axes by 3.0. Supplement with a 3D scan of the physical D10 chassis (Polycam/KIRI Engine) to establish fitment geometry: wheel arch positions, floor clearance, and magnetic mount catch-point locations. See workflow notes below.
+**Phase 2 — custom E36 cabriolet (modular 3D print + aluminum panel skins):** No production lexan E36 cabriolet body exists. See [`rc-popstar/docs/body-plan.md`](rc-popstar/docs/body-plan.md) for the design workflow, modeling constraints, Blender/Fusion 360 approach, and print service guide.
 
 **Phase 2 materials:**
 
@@ -100,197 +95,27 @@ Scale the YouMagine E36 Cabrio 1994 model (1:30) by ×3 uniform in Blender to re
 | Squadron Green Putty or Vallejo Plastic Putty | Blend seam between aluminum panel + printed arch | Hobby store | ~$5–8 |
 | Print service (see below) | All printed parts — no home printer | JLCPCB, Craftcloud, Shapeways | See print service table |
 
-Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
-
-**Design references:**
-
-| Design | Link | Notes |
-|---|---|---|
-| **Project Archive Object 001** — 180SX modular RC body | [youmagine.com](https://youmagine.com/designs/308aaef2-91ef-491b-a6ea-b6158de1d04b) · [cults3d.com](https://cults3d.com/en/3d-model/game/project-archive-object-001-modular-180sx-inspired-1-10-drift-rc-body-kit) | $20. Inner frame geometry, aluminum skin approach, TPU flexure hinges. Primary design reference. |
-| **1:10 RC E30 Drift Car** — full RC car with cabriolet body | [youmagine.com](https://youmagine.com/designs/86fa803e-46ad-40c4-a6eb-54f078b35f61) | Paid. 139 STL files. E30 cabriolet body (13 parts: windshield, fenders, mirrors, windows, rear end), roll cage, decorative engine, front MacPherson suspension. Body part breakdown is the closest reference to the E36 cabriolet approach. Chassis ignored — keeping D10. |
-| **BMW E36 Cabrio 1994 Printable Car** — body geometry only | [youmagine.com](https://youmagine.com/designs/f5554169-77c1-4480-853f-adf31664147a) | Paid. 1:30 scale — scale ×3 to reach 1:10. Has interior. Body geometry source for the custom build. |
-
-#### Modeling constraints for Stage-D10 fitment
-
-| Parameter | Value |
-|---|---|
-| Body width (at wheel arch) | 190mm max (standard 1/10 touring class) |
-| Wheelbase | D10 adjustable 246–264mm; target 260mm to match TAF21000 |
-| Magnetic catch points | 4× 10mm diameter recesses, ~2mm deep, on body underside at D10 post locations — measure from your built D10 before modeling |
-| Wheel arch clearance | Minimum 5mm gap from tire at full droop + full lock |
-| Wall thickness | 1.5–2mm for TPU; 2mm for PLA/ASA/PETG |
-| M2 screw clearance hole (FDM) | Design at **2.2mm** — FDM closes up nominal holes |
-| M2 heat-set insert hole (FDM) | Design at **3.2mm** |
-| Snap/clip tab clearance (FDM) | Design **0.3mm** gap between mating faces |
-| Magnetic recess diameter (FDM) | Design at **10.3mm** for 10mm N52 magnet |
-| Magnetic recess diameter (SLS) | Design at **10.1mm** for 10mm N52 magnet |
-
-#### Body architecture — inner frame + swappable panel system
-
-The inner frame is the permanent structural skeleton of the body. It mounts to the D10 chassis via the magnetic catch points, carries the roll cage, windshield frame, A-pillars, dashboard, and interior. Outer body panels (fenders, hood, doors, roof) mount to the frame at consistent attachment points and are individually removable and swappable.
-
-**Inner frame (permanent):**
-- Print in rigid PLA/ASA
-- Roll cage drops into the cockpit from above, visible through the open top
-- Magnetic catch points (4×) built into the floor tabs
-- All panel attachment points defined here — consistent screw hole positions or clip geometry across every panel variant
-
-**Swappable panel variants (examples for front fenders):**
-
-| Variant | Material | Impact behavior | Notes |
-|---|---|---|---|
-| Stock E36 arch | Aluminum sheet over forming buck | Dents, scratches, develops character | Single-curve; forming buck approach |
-| E46 arch baked-in | TPU (printed) | Bounces back; paint scratches only | E46 arch profile modeled in Blender, printed as one piece, mounts to same frame points |
-| Any other geometry | TPU or aluminum | Varies | Same mount interface — cross-compatible with all variants |
-
-**Key principle:** The panel attachment interface is standardized. Every fender variant uses identical mount point positions and hardware — that's what makes them interchangeable. Model this standard in Blender before modeling any panels, then all panels reference it. Forming bucks are only needed for aluminum variants; printed variants need no buck.
-
-**TPU panels in drift events:** TPU rebounds from barrier contact and car-to-car hits without permanent deformation. Paint on the exterior surface scratches and chips but the panel shape returns. A hard direct impact can crack thin walls, but normal drift contact will not permanently damage TPU panels.
-
-#### Reference STLs to study (not cabriolet, but E36 modeling reference)
-
-- [BMW E36 widebody drift — Printables](https://www.printables.com/model/1771017-bmw-e36-widebody-drift) — full E36 widebody by Mirco Slepko, free, updated July 2026. Good geometry reference even if not a cab.
-- [BMW M3 Liberty Walk RC Drift 1/10 — Thingiverse](https://www.thingiverse.com/thing:4898937) — 1/10 scale drift body with lights integrated.
-- [The Bavarian MW E36 — MakerWorld](https://makerworld.com/en/models/2891006-the-bavarian-mw-e36) — full RC platform build on a 3D-printed E36 body; has a build video. Useful for seeing how a printed body integrates with RC hardware.
-- [BMW E36 BN Sports body kit — Cults3D](https://cults3d.com/en/3d-model/game/bodykit-bmw-e36-coupe-bn-sports-8-pieces-imprimable-en-3d-stance-drift) — 8-piece widebody kit in multiple scales including 1/10. Not RC-specific but fender/bumper geometry is useful reference.
-
-#### Workflow — 1:30 model → 1:10 printable modular body
-
-1. **Scale to 1:10** — import the YouMagine E36 Cabrio 1:30 model into Blender. Scale all geometry by ×3 uniform. Verify against a known E36 dimension (wheelbase 2700mm → should read 270mm at 1:10 after scale; the D10 chassis is 260mm, so minor horizontal trim may follow in a later step applied to the body only).
-2. **Import D10 chassis scan** — scan the physical built D10 chassis with Polycam or KIRI Engine. Import into Blender as a reference object. Position the scaled body geometry over the chassis scan to identify what needs adjustment: wheel arch positions, floor clearance, front/rear overhang.
-3. **Isolate what you need** — in the scaled E36 model, hide or delete anything internal that won't be visible or structural: door internals, engine bay detail under hood, glass geometry. Keep: outer body panels, dashboard, seats, roll hoop/cage area.
-4. **What to make from what material:**
-
-   | Part | Material | Notes |
-   |---|---|---|
-   | Inner frame (floor, mount tabs, A-pillars, windshield frame) | PLA/ASA | Rigid skeleton; define panel attachment interface here first |
-   | Roll cage | PLA/ASA | Drops into cockpit from above; visible through open top |
-   | Interior (dash, seats) | PLA/ASA or PETG | Worth detailing — visible |
-   | Hood, doors, roof panel, rear deck | Aluminum sheet over forming buck | Single-curve or near-flat panels; buck exported from Blender mesh + Solidify modifier |
-   | Fender — stock arch variant | Aluminum sheet over forming buck | Same mount interface as printed variant |
-   | Fender — E46 arch variant (or any other) | TPU printed | Arch baked into the geometry; bounces back from impacts; same mount interface |
-   | Bumper fascia, rear valance | TPU printed | Compound curves; prints directly |
-   | Hardtop (optional) | PETG or ASA | Full rigid shell; character lines modeled in Blender |
-   | Flexible seals, grommets, edge trim | TPU | |
-
-5. **Forming bucks** — for each aluminum panel, duplicate the panel surface mesh in Blender, add a Solidify modifier (~5mm backing) to make it printable, export as STL, print in PLA. Press K&S 0.016" aluminum sheet over the buck by hand or with a rubber mallet for tighter curves. Trim excess with snips; file edges smooth. The aluminum holds the pressed shape. Self-etching primer → color coat → skip clear coat for the battle-scar look.
-6. **Attaching printed pieces to aluminum panels** — for overfenders and any printed part that joins an aluminum skin: model TPU clip tabs into the printed part that hook over the aluminum edge (no fasteners, removable). For pieces that take direct impact, use M1.4–M2 machine screws into heat-set threaded inserts. Small aluminum pop rivets (1.5–2mm) are also an option and look appropriate on a drift build.
-7. **3D scan for accessories** — to fit the 24K Phase 1 accessories (light buckets, exhaust, spoilers) to the custom body: spray shiny PVC parts with chalk spray first, scan with Polycam/KIRI Engine, import into Blender. Use the scan as reference for modeling recesses or mounting features in the printed structure.
-8. **Magnetic catch points** — model 4 shallow recesses (10mm diameter, ~2mm deep) into the body underside at the D10 magnetic post locations. Measure from your built D10 at 260mm wheelbase before finalizing.
-9. **LED integration** — model round headlight recesses directly into the front panel; rear cluster housings into the tail section. No separate buckets needed.
-10. **Interior and engine** — keep the scaled dash and seats from the 1:30 model; add/refine roll cage tubes as curves with bevel. Decorative engine visible through the hood if you model the hood as openable (TPU flexure hinge on the hood edge).
-
-#### Fusion 360 — parametric mount standards + print-ready files
-
-Blender handles organic surface modeling. Fusion 360 handles everything that requires dimensional precision: the mount interface standard, screw holes, clip tabs, frame tabs, tolerances. All Blender geometry imports as a reference mesh — Fusion-native parametric features are built on top of it. This is the step where parts become print-ready and cross-compatible.
-
-**D10 chassis stub — measure before starting Fusion work:**
-
-Measure from the physical built D10 with calipers. Model these as a simple parametric B-Rep stub in Fusion — not a full chassis replica, just the critical interfaces.
-
-| Measurement | How to take it |
-|---|---|
-| Wheelbase (axle center to axle center) | Set to 260mm; confirm after adjusting D10 |
-| Magnetic post X positions (front/rear) | Calipers from front edge of chassis to post center |
-| Magnetic post Y positions (left/right) | Calipers from chassis centerline to each post center |
-| Post height (magnet center from chassis floor) | Calipers |
-| Track width front (hub face to hub face) | Calipers |
-| Track width rear (hub face to hub face) | Calipers |
-| Ground clearance (chassis floor to ground) | Feeler gauge or calipers |
-| Wheel outer diameter | Calipers across tire |
-| Wheel arch clearance envelope | Roll wheel to full droop + full steering lock; photograph from front and side; measure extreme positions |
-
-**Fusion 360 workflow:**
-
-1. **Parameters spreadsheet first** (Modify → Change Parameters). Define the attachment standard before modeling anything:
-   - `panel_mount_hole_dia = 2.2mm`
-   - `panel_mount_hole_spacing` (center-to-center; choose and standardize)
-   - `clip_tab_width`, `clip_tab_depth`, `clip_tab_clearance = 0.3mm`
-   - `magnet_recess_dia`, `magnet_recess_depth`
-   - Any other interface dimension
-2. **Insert D10 chassis stub** from caliper measurements as a parametric B-Rep component
-3. **Insert Blender body panels** (File → Insert → Insert Mesh, OBJ format) as mesh body reference objects — one component per panel
-4. **Build inner frame** as a new parametric B-Rep component. Constrain it to the chassis stub. Add all panel attachment features referencing the parameters spreadsheet.
-5. **Build each panel variant** as its own component. Reference the OBJ mesh for surface shape; add Fusion-native mount holes and clip features from parameters. Assembly-constrain to inner frame to verify fit.
-6. **Interference check** — right-click assembly → Inspect → Interference. Resolve any clashes before exporting.
-7. **Export each component as STL**: right-click component → Save As Mesh → STL. Set refinement to Fine (0.005mm chord deviation, 5° angle tolerance).
-
-**Before sending to print service — validate STL files:**
-- Validate each STL in **Fusion 360**: Insert → Insert Mesh. Fusion reports non-manifold geometry on import. For a dedicated repair pass: Mesh workspace → Repair → Find and Fix Issues. Alternatively, load into **PrusaSlicer** (free) — it flags non-manifold and open-surface errors before you slice.
-- Check minimum wall thickness is above process minimum (FDM: 1.5mm; SLS: 0.8mm)
-- Confirm part orientation in slicer preview or service preview matches intent
-
-#### Print services — no home printer
-
-All parts ordered from a print service. **Material and process choice has a major impact on surface finish.** FDM parts have visible layer lines that require significant post-processing before painting. SLS and MJF parts have a fine matte texture that primes and paints directly, similar to model kit styrene.
-
-| Part type | Recommended process | Material | Layer lines? | Where to order |
-|---|---|---|---|---|
-| Body panels (painted exterior) | **SLS** | PA12 nylon | None | JLCPCB, Shapeways |
-| Inner frame, roll cage (structural, not painted) | FDM | ASA or PETG | Yes (internal — irrelevant) | JLCPCB |
-| Flexible fenders, bumper fascias | FDM | TPU 95A | Light — sand before priming | JLCPCB (offers TPU) |
-| Interior, dashboard, seats (visible, fine detail) | SLA resin | Resin | None | JLCPCB, Craftcloud |
-| Forming bucks (aluminum forming tool, not final part) | FDM | PLA | Yes (irrelevant — tool only) | JLCPCB (cheapest) |
-
-| Service | What it's good for | TPU? | SLS? | Notes |
-|---|---|---|---|---|
-| **JLCPCB** | Best price overall; FDM, SLA, SLS | ✅ TPU 95A | ✅ PA12 | Ships from China; 7–14 days. Primary service for most parts. |
-| **Craftcloud** | Aggregator — quotes from multiple services | Varies | ✅ | Good for comparing prices across processes |
-| **Shapeways** | MJF nylon specialty; US-based | ❌ | ✅ MJF PA12 | Higher cost; best surface finish for small detailed parts |
-| **Protolabs** | Industrial tolerance; fast | ✅ | ✅ | Most expensive; use only if critical-fit parts need re-runs quickly |
-
-**Surface finish workflow for printed body panels (SLS):**
-1. SLS PA12 arrives with fine gritty texture — no layer lines, no support marks
-2. Sand lightly with 400-grit wet/dry; wipe with IPA
-3. One coat Tamiya Surface Primer — fills any remaining texture
-4. Wet sand 400-grit; repeat primer if needed
-5. Color coat (acrylic, enamel, or lacquer all work on primed nylon)
-
-**For TPU fenders from FDM:**
-1. FDM TPU has light layer lines on outer surfaces — sand with 220-grit along layer direction, then 400-grit across
-2. Tamiya Surface Primer (flexible formula — regular primer cracks on TPU)
-3. Color coat
+> Do not use kitchen foil — it is 0.016–0.024mm thick (20× thinner than K&S sheet) and will not hold a formed shape.
 
 ---
 
 ### Graphics and Painting
 
-**How lexan/polycarbonate bodies are painted:**
+Phase 1 lexan body (24K TAF21000): paint from the inside — color coats on the interior surface, then a white backing layer. Phase 2 cabriolet: exterior conventional spray (prime, color, clear).
 
-Standard RC bodies (lexan/polycarbonate) are painted **from the inside**. The exterior surface stays clear and untouched. Workflow:
+See [`rc-popstar/docs/paint-guide.md`](rc-popstar/docs/paint-guide.md) for color matching (BMW 0490 / Lila Metallic), Tamiya PS options for lexan, automotive basecoat approach for the 3D printed body, and the Dollie Script font file.
 
-1. Mask window edges on the exterior with vinyl masking tape or liquid mask
-2. Spray paint the interior surface — color coats first, then a white or silver backing layer for opacity
-3. The paint shows through the clear exterior, giving the finished body a glassy, depth look
-4. Trim lines and fine edges are defined by where you masked
-
-This is the opposite of conventional model painting. All Tamiya PS, Parma, and similar lexan spray lines are formulated for this — they flex with the body instead of cracking.
-
-**Resources:**
-- [Tamiya PS spray paint line](https://www.tamiyausa.com/shop/paint/rc-color-spray/) — the industry standard. PS-1 White, PS-2 Red, PS-13 Gold are common starting points.
-- [Tamiya PS sprays at AMain](https://www.amainhobbies.com/search?s=Tamiya+PS+spray&cID=1) — stocked individually, ~$8–10/can.
-- [Tamiya PS paint at RC Car World](https://rccarworld.com/category/paint/) — full range stocked locally, $8–12/can.
-- [YouTube: "How to paint a lexan RC body"](https://www.youtube.com/results?search_query=how+to+paint+lexan+rc+body+tutorial) — many solid tutorials covering masking, backing coats, and gradient techniques.
-
-**For a 3D printed body (the E36 cabriolet):**
-
-3D printed surfaces don't use the inside-out technique — paint goes on the exterior conventionally. Steps:
-1. Lightly sand to 400 grit to reduce layer lines (TPU: skip sanding, use filler primer)
-2. Filler primer to fill remaining texture
-3. Base coat and color coat with regular spray paint or airbrush
-4. Clear coat to protect and add gloss or matte finish
-5. Vinyl graphic applied on top of clear coat once fully cured
-
-**"Pop Star" vinyl:** Cut vinyl goes on the exterior of the body (whether lexan or printed), on the rear 3/4 panel or rear windshield area. Size for the rear window: roughly 45mm × 18mm lettering at ~12mm cap height. At that size it reads well from a meter.
-
-- Font: **Bombshell Pro** (Latinotype, ~$30 license) is the closest widely-available match to the Barbie script. For a sign shop job, just show them a reference Barbie logo image — most shops can match it visually.
-- Order cut vinyl: [Sticker Mule](https://www.stickermule.com), local sign shop, or Cricut if you own one.
-
+- [Tamiya PS spray paint line](https://www.tamiyausa.com/shop/paint/rc-color-spray/) — the industry standard.
+- [Tamiya PS sprays at AMain](https://www.amainhobbies.com/search?s=Tamiya+PS+spray&cID=1) — ~$8–10/can.
+- [Tamiya PS paint at RC Car World](https://rccarworld.com/category/paint/) — full range locally, $8–12/can.
+- [YouTube: "How to paint a lexan RC body"](https://www.youtube.com/results?search_query=how+to+paint+lexan+rc+body+tutorial)
 ---
 
 ### Working Lights
 
-The 24K E36 M3 Phase 1 body uses separate light bucket accessories (24K2102 for standard E36, 24K2103 for GR Works). The Phase 2 custom cabriolet body should have headlight recesses and rear cluster housings modeled directly into the structure — no separate buckets needed since you're designing from scratch.
+Phase 1 (24K lexan): uses light bucket accessories — see Body Plan above. Phase 2 (cabriolet): headlight recesses modeled into the structure; no buckets needed.
+
+See [`rc-popstar/docs/build-decisions.md`](rc-popstar/docs/build-decisions.md) for LED controller decision, magnetic contact wiring, BEC voltage/resistor table, and full channel map.
 
 **LED kits (verified at AMain):**
 
@@ -301,19 +126,18 @@ The 24K E36 M3 Phase 1 body uses separate light bucket accessories (24K2102 for 
 | [HPI Stage-D10 Ford Mustang LED Kit](https://www.amainhobbies.com/hpi-staged10-ford-mustang-gt-led-lights-kit-hpi161426/p1853242) | D10-specific harness routing. Designed for the Mustang body but the D10 wiring/connector spec is what matters — check connector compatibility before buying for a custom body. | **$18.69** |
 | [Common Sense RC LED Kit 1/10](https://www.amainhobbies.com/common-sense-rc-led-lighting-kit-1-10-cars-truck-csdledkitc1/p545354) | Includes basic controller. | **$23.99** |
 
-**Recommended approach for the custom cabriolet:**
+### FPV
 
-Use the **Killerbody kit ($16.99)** — the control box reads steering and throttle via Y-cables on CH1 and CH2 and automatically handles headlights, brake simulation, and turn signals without needing a spare channel. The Pop Star build adds a magnetic contact delivery system: chassis-side N52 satellite magnets carry LED+ to the body, and OEM D10 body post magnets serve as GND return — circuit closes when the body attaches.
+5.8GHz analog video link, independent of RC control. See [`rc-popstar/docs/fpv.md`](rc-popstar/docs/fpv.md) and [`rc-popstar/harnesses/fpv-harness.wv`](rc-popstar/harnesses/fpv-harness.wv).
 
-**Simpler alternative (CH3 approach):** The D10 chassis exposes a CH3 output from the RF-51 receiver, controlled by the TF-51/RC6GS VR knob. A body-mounted LED module connected via a single plug to CH3 handles on/off/DRL modes without Y-cables or a dedicated controller. The HPI Mustang RTR uses this approach (part 161426, $18.69). For a custom body, a single-plug LED bar or simple LED controller wired to CH3 is the cleanest path if you're designing the body from scratch and don't need brake simulation. The Killerbody approach remains better if you want brake light behavior.
+| Item | Part # | Where | Price |
+|---|---|---|---|
+| **FPV AIO** — RunCam RC Cadet (camera + 5.8GHz VTX) | — | [runcam.com](https://www.runcam.com/cameras/rc-cadet/) | ~$30 |
+| **FPV goggles** — Eachine EV800D (box, integrated RX) | — | [eachine.com](https://www.eachine.com/products/ev800d) / Amazon | ~$55 |
+| **5V regulator** — Pololu D24V5F5 | — | [pololu.com](https://www.pololu.com/product/2843) | ~$5 |
 
-Full wiring documentation, decision tree (gyro variants, BEC voltage vs resistor values), and harness diagrams are in [`rc-popstar/`](rc-popstar/).
+> Skip the regulator if BEC is set to 5V. Required when BEC is above 5V (e.g. 7.4V for servo). Total FPV draw ~400mA; XD10 Pro BEC has ~4.2A headroom with all systems running. Use pit mode or an inline switch to disable VTX at the track if required.
 
-For **scale headlights** in an E36 context: the round kidney-area headlights are the defining feature. Either model them as raised lenses with the LED sitting behind, or mill out a lens recess and press-fit a clear resin dome. The latter is more work but looks significantly more realistic.
-
-**Additional resources:**
-- [r/rcdrift](https://www.reddit.com/r/rcdrift/) — active community; search "LED" or "lights" for wiring examples and body builds
-- [Printables RC body tag](https://www.printables.com/search/models?q=rc+drift+body+1%2F10) — useful for seeing how other designers handle light integration in 3D printed bodies
 
 ### What's Included in the Kit (no need to buy)
 - Fully assembled chassis with oil-filled threaded coilover shocks
@@ -359,7 +183,8 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Tape | Yokomo mounting tape | $4.29 |
 | Pinion | (estimate) | ~$7.00 |
 | LED system | Killerbody 48102 + N52 magnets + resistors | ~$27 |
-| **Phase 1 Total** | | **~$846** |
+| FPV system | RunCam RC Cadet + EV800D goggles + regulator | ~$90 |
+| **Phase 1 Total** | | **~$936** |
 
 **Phase 2 (custom body, after first month of driving):**
 

@@ -98,4 +98,34 @@ Placement options:
 - Rear 3/4 of body shell (below window line)
 - Rear windshield panel (script across lower glass area)
 
+Size for the rear window: roughly 45mm × 18mm lettering at ~12mm cap height. Reads well from a meter.
+
 Print white or chrome on the Lila Metallic base. Order from a local sign shop or a custom vinyl service (Sticker Mule, Unstoppable Graphics). Specify matte finish to avoid glare under track lighting.
+
+---
+
+## Phase 1 lexan body painting (24K TAF21000)
+
+Standard RC lexan/polycarbonate bodies are painted **from the inside**. The exterior surface stays clear and untouched. This is the opposite of conventional model painting.
+
+**Workflow:**
+1. Mask window edges on the exterior with vinyl masking tape or liquid mask.
+2. Spray the interior surface — color coats first, then a white or silver backing layer for opacity.
+3. The paint shows through the clear exterior, giving a glassy depth.
+4. Trim lines are defined by where you masked.
+
+All Tamiya PS, Parma, and similar lexan spray lines are formulated for this — they flex with the body instead of cracking. Regular spray paint will crack and peel off lexan.
+
+**Tamiya PS colors for the Lila Metallic look on lexan:**
+
+| Product | Code | Character | Match quality |
+|---|---|---|---|
+| **Tamiya Metallic Purple** | PS-18 | Purple metallic, leans blue-purple | Moderate — shifts more blue than BMW Lila Metallic |
+| **Tamiya Purple Anodized Aluminum** | PS-51 | Strong purple metallic with aluminum effect | Better — more saturated, but still bluer than the BMW color |
+| **Tamiya Iridescent Purple/Green** | PS-46 | Shifts between purple and green at angle | Not a match — iridescent, not metallic purple |
+
+**Tip for PS-51:** spray one coat of PS-51, then back it with a coat of PS-2 (Red) before the black backing layer. The red tint pulls the purple slightly toward magenta for a closer match to Lila Metallic's pink-purple character.
+
+**Available at RC Car World** (local, full range stocked): PS series $8–12/can.
+
+Source: [Tamiya PS-51](https://tamiya.com/english/products/86051/index.html) · [Tamiya PS-18 at Excel RC](https://www.excelrc.com/products/tamiya-polycarbonate-paint-ps-18-metallic-purple)
