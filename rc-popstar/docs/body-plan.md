@@ -77,16 +77,67 @@ Trade-off: the 24K buckets are designed for the E36 M3 coupe body profile. The m
 
 This is the most practical approach for Phase 2 lights — you already own the buckets by the time you build Phase 2.
 
-**Option 3 — Thin PETG sheet for windshield:**
+**Option 3 — Thin PETG sheet for windshield (backup only):**
 
-0.5mm clear PETG sheet can be heat-formed over a printed buck to create a windshield. Source: any FDM filament supplier (e.g. clear PETG sheet from ePlastics, McMaster-Carr). Warp with a heat gun over a PLA/PETG buck printed to the windshield curve. Less optically clear than SLA resin but good enough for a windshield that doesn't need to be optically perfect.
+0.5mm clear PETG sheet can be heat-formed over a printed buck to create a windshield. Source: any FDM filament supplier (e.g. clear PETG sheet from ePlastics, McMaster-Carr). Warp with a heat gun over a PLA/PETG buck printed to the windshield curve. Less optically clear than SLA resin but adequate if the SLA windshield fails or is delayed.
 
-| Part | Recommended approach |
-|---|---|
-| Windshield | SLA Transparent 8001 (model in Blender, print at JLCPCB) — or 0.5mm PETG sheet formed over a buck |
-| Headlight lenses | Reuse Phase 1 24K TAF21002/21003 buckets (design compatible mount points) — or SLA Transparent 8001 |
-| Taillight lenses | SLA Transparent 8001 — tint interior with Tamiya TS-73 (Clear Orange) or TS-74 (Clear Red) |
-| Side windows (hardtop option) | SLA Transparent 8001 or 0.5mm PETG sheet |
+**Not suitable with FPV.** PETG sheet has enough optical distortion to degrade FPV image quality at the camera lens position. The distortion compounds over viewing distance on track. If running FPV through the windshield, use SLA Transparent 8001 only.
+
+---
+
+### Windshield and clear part mounting
+
+Model the windshield as a distinct part in Blender — a separate piece with a perimeter flange that sits inside a channel in the body frame, like a real car windshield in its rubber gasket channel. No living hinges or snap-fits; the channel + adhesive approach is the right scale equivalent.
+
+**Flat step + locating pins (primary approach):**
+
+Easier to model and more forgiving than a channel. Model a flat shelf (step) around the windshield opening — one dimension to get right: step depth = windshield thickness (~1.5–2mm for SLA). The windshield sits flat on the shelf. Silicone bead around the perimeter seals it. The seam is visible from outside, but it reads as a body line.
+
+- Step depth: match windshield part thickness (design both parts in Fusion 360 so this is parametric)
+- Step width: 2–3mm inset from the exterior face — enough shelf for the silicone bead to seat
+
+**Locating pins — modeling approach:**
+
+Model the pins as **cylindrical protrusions directly in the body frame part file** in Fusion 360. They print as integral PA12 nylon stubs — no separate hardware. The windshield file gets the matching hole and slot as cutout geometry. Both sets of features are modeled; both print as part of their respective files.
+
+**Why Fusion 360, not Blender:** Pins require sub-millimeter dimensional accuracy and need to stay positioned relative to the windshield opening edge. In Fusion 360, `pin_diameter = 1.5mm` is exact and the pin position is constrained to the step geometry — if the windshield opening changes, the pin re-constrains to it. In Blender you're editing mesh vertices; verifying that the pin in one file and the hole in another actually agree to 0.2mm clearance has no native tooling. You can do it in Blender (use the N panel → Item → Dimensions for exact values), but you'd be fighting the tool. Per the general workflow split: Blender for organic surfaces, Fusion 360 for anything requiring dimensional precision or cross-part consistency.
+
+Body frame (Fusion 360): add 1.5mm diameter × 3mm tall cylinders at pin locations as parametric extrudes on the mating face.
+Windshield (Fusion 360): sketch a 1.7mm circle for hole 1 and a 1.7mm × 2.5mm rounded-end slot for hole 2; cut both through the mating face.
+
+**Why PA12 body frame gets the pins, not the SLA windshield:**
+
+PA12 is tougher — a SLA resin pin can snap during installation and lodge in the body hole, which requires drilling out. With PA12 pins + SLA holes: replacement windshields drop onto the fixed frame pins; the body never changes.
+
+**Use one round hole + one slot, not two round holes:**
+
+Two round holes over-constrain the assembly: any drift between pin centers and hole centers (±0.2mm is normal for SLS/SLA) means both pins can't seat simultaneously. Source: [phorm.to alignment pins guide](https://phorm.to/blog/alignment-pins-for-3d-printed-parts/) — "Two round pins jam under 0.15mm of drift; a pin and a slot locate the part and absorb it."
+
+Correct geometry:
+- **Pin 1**: 1.5mm round pin on body frame → **1.7mm round hole** in windshield (0.2mm clearance per [makelab.com](https://help.makelab.com/help/article/how-to-design-holes-threads-and-inserts-for-3d-printing) SLA slip-fit guidance)
+- **Pin 2**: 1.5mm round pin on body frame → **1.7mm × 2.5mm slot** in windshield (1.7mm wide, 2.5mm along the line between the two pins — absorbs manufacturing drift in that axis)
+- Chamfer mouth of hole and slot 0.3–0.5mm × 45° so the pin self-centers on insertion
+
+This is called exact constraint (source: [phorm.to](https://phorm.to/blog/alignment-pins-for-3d-printed-parts/), citing Blanding's *Exact Constraint*, ASME 1999).
+
+**Channel approach (alternative — cleaner seam, more modeling work):**
+
+If hiding the joint line matters (e.g. if the windshield seam will be visible in a photo context), add a perimeter channel instead of a flat step: 1.5mm wide × 2.5mm deep, with the windshield flange designed to match. Requires two interlocking features to agree on width and depth simultaneously. Wall thickness around the channel: 2mm minimum. Under impact, a channel transmits lateral force into the frame walls — flat step is better for a car that takes hits.
+
+**Adhesive:**
+
+Permatex Clear RTV Silicone (auto parts store, ~$6) is the correct material — flexible, bonds resin and plastic, sets to a rubber consistency, absorbs vibration, removable with a thin blade if needed. Apply a thin bead inside the channel before dropping the windshield in. No need for waterproof properties. Avoid CA glue (brittle, cracks under flex) and E6000 (works but is harder to remove if the windshield ever needs replacement).
+
+**Same approach applies to side windows, rear window, and hardtop glass panels.** Light lenses are different — they're structural enough to press-fit or screw in; see Phase 1 bucket reuse above.
+
+| Part | Approach | Mount method |
+|---|---|---|
+| Windshield | SLA Transparent 8001 | Channel + locating tabs + Permatex Clear RTV |
+| Side windows (hardtop) | SLA Transparent 8001 | Channel + locating tabs + Clear RTV |
+| Rear window (hardtop) | SLA Transparent 8001 | Channel + locating tabs + Clear RTV |
+| Headlight lenses | Phase 1 24K buckets (preferred) or SLA Transparent 8001 | Press-fit recess or screw into housing |
+| Taillight lenses | SLA Transparent 8001 — tint with Tamiya TS-74 inside | Press-fit recess |
+| Windshield (backup) | 0.5mm PETG sheet over forming buck | Not suitable if running FPV |
 
 ---
 
