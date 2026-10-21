@@ -46,16 +46,15 @@ lowest-risk starting point; swap components as you develop preferences.
 | **Body — Phase 2** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU after first month of driving. | material cost only |
 | **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | Chassis-side N52 cone magnets + hardware for snap-on body attachment without body clip holes. Required for Phase 2 body (model 4 catch points into the TPU body underside). [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
 | **Wheels** — 26mm touring car offset, 190mm width | — | Standard 1/10 touring offset; confirm hex fitment with D10 | ~$20–30 (not yet verified) |
-| **Drift tires** — Yokomo DRC (carpet, 4-pack) | YOKZR-DRCA | Indoor/carpet compound. [AMain](https://www.amainhobbies.com/yokomo-drc-competition-drift-tire-4-for-carpet-surface-yokzr-drca/p682057) | **$15.49** |
-| **Drift tires** — Yokomo DRPA (P-Tile, 4-pack) | YOKZR-DRPA | For P-Tile surfaces. [RC Car World](https://rccarworld.com/product/yokomo-drpa-competition-drift-tire-4-for-p-tile/) | **$19.00** |
-| **Drift tires** — Yokomo DRA (asphalt, 4-pack) | YOKZR-DRAA | For outdoor asphalt sessions. [AMain](https://www.amainhobbies.com/yokomo-dra-competition-drift-tire-4-for-asphalt-surface-yokzr-draa/p682052) | **$15.75** |
-| **Tire mounting tape** — Yokomo DRA/DRC | YOKZR-DRTA | Required to mount these tires to the wheels. [AMain](https://www.amainhobbies.com/yokomo-dra-drc-drift-tire-mounting-tape-yokzr-drta/p682051) · [RC Car World](https://rccarworld.com/product/yokomo-dra-drc-drift-tire-mounting-tape/) | **$4.29** |
+| **Drift tires (primary)** — Yokomo DRPA (P-Tile, 4-pack) | YOKZR-DRPA | RC Car World track surface. Stock up on these. [RC Car World](https://rccarworld.com/product/yokomo-drpa-competition-drift-tire-4-for-p-tile/) | **$19.00** |
+| **Drift tires (alt)** — Yokomo DRA (asphalt, 4-pack) | YOKZR-DRAA | For outdoor asphalt sessions. Buy when you move outdoors. [AMain](https://www.amainhobbies.com/yokomo-dra-competition-drift-tire-4-for-asphalt-surface-yokzr-draa/p682052) | **$15.75** |
+| **Tire mounting tape** — Yokomo DRPA/DRA/DRC | YOKZR-DRTA | Required to mount these tires to the wheels. [AMain](https://www.amainhobbies.com/yokomo-dra-drc-drift-tire-mounting-tape-yokzr-drta/p682051) · [RC Car World](https://rccarworld.com/product/yokomo-dra-drc-drift-tire-mounting-tape/) | **$4.29** |
 | **Pinion gear** — 48P, to match FDR | — | Stock FDR is 2.6; start with HPI's recommended pinion | ~$5–10 (not yet verified) |
 | **Satellite magnets** — N52 NdFeB disc 6mm × 3mm | D62 (K&J Magnetics) | 8 required (2 per body post corner). LED+ conductor in the magnetic contact interface. [K&J Magnetics](https://www.kjmagnetics.com/proddetail.asp?prod=D62) | ~$8–10 for a pack |
 | **Resistors** — 100Ω and 150Ω 1/4W | — | Current limiting in body harness. Values depend on XD10 Pro BEC setting (item 1G). See `rc-popstar/docs/build-decisions.md` for full table. | <$1 at Micro Center / generic |
 | **"Pop Star" vinyl graphic** | — | Script lettering in Barbie font on rear 3/4 of body or rear windshield. Get cut at a local sign shop or order from a custom vinyl service (Sticker Mule, Unstoppable Graphics, etc.). Font: Bombshell Pro (closest commercially available match to the Barbie script). Specify white or hot pink, matte or gloss to taste. | ~$10–25 cut + shipped |
 
-> **Confirm track surface before buying tires:** RC Car World stocks DRPA (P-Tile) online but not DRC (carpet) or DRA (asphalt). Ask staff what compound they recommend for their indoor track before buying — P-Tile and carpet require different compounds.
+> **Track surface confirmed P-Tile (RC Car World).** Buy DRPA as your primary tire — stocked online at RC Car World. DRA (asphalt) if you move outdoors. DRC (carpet) not needed for this track.
 
 ---
 
@@ -161,6 +160,7 @@ Not needed at build time — add progressively as technique develops.
 | **Sealed steel bearings** (alt to ceramic) | TFE10469 | Any time | Same sizes, standard sealed steel. Lower cost. | **~$38** |
 | **Anti-roll bars** | HPI option parts | After Phase 1 | Front and rear mount points are reserved on the chassis; bars sold separately. Check HPI's Stage-D10 options list. | TBD |
 | **Shock oil** | — | After Phase 1 | Stock oil is 150cst. Try softer (100cst) on low-grip carpet; stiffer (200cst) for higher grip or more planted rear. | ~$8–12 |
+| **Radio** — Futaba 4PM Plus + R304SB-E receiver | FUT0100 | After Phase 1 | Standard upgrade from RC6GS V3 when ready to compete seriously. Trigger feel and programmability are noticeably better. Most popular drift radio at club/competition level. 4PV is discontinued — 4PM Plus is the current equivalent. [AMain](https://www.amainhobbies.com/futaba-4pm-plus-4channel-2.4ghz-tfhss-sr-radio-system-fut01004416-1/p1656188) | **~$327.99** |
 
 ### Stage-D10 Build Total
 
