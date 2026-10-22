@@ -143,9 +143,13 @@ Permatex Clear RTV Silicone (auto parts store, ~$6) is the correct material — 
 
 ### Design references
 
+> **Start here before modeling anything:** Buy and study [Project Archive Object 001](https://cults3d.com/en/3d-model/game/project-archive-object-001-modular-180sx-inspired-1-10-drift-rc-body-kit) ($20). This is the build blueprint for the inner frame + aluminum skin + TPU panel system — the same construction logic used for Pop Star. Open the files in Blender, understand how the inner frame, panel attachment tabs, and aluminum skin interface work, then adapt that to the E36 cabriolet body. Everything in this doc flows from that design.
+>
+> ![Project Archive Object 001 — exploded assembly view](../assets/reference/pa001-exploded-view.png)
+
 | Design | Link | Notes |
 |---|---|---|
-| **Project Archive Object 001** — 180SX modular RC body | [youmagine.com](https://youmagine.com/designs/308aaef2-91ef-491b-a6ea-b6158de1d04b) · [cults3d.com](https://cults3d.com/en/3d-model/game/project-archive-object-001-modular-180sx-inspired-1-10-drift-rc-body-kit) | $20. Inner frame geometry, aluminum skin approach, TPU flexure hinges. Primary design reference. |
+| **Project Archive Object 001** — 180SX modular RC body | [youmagine.com](https://youmagine.com/designs/308aaef2-91ef-491b-a6ea-b6158de1d04b) · [cults3d.com](https://cults3d.com/en/3d-model/game/project-archive-object-001-modular-180sx-inspired-1-10-drift-rc-body-kit) | $20. **Primary build reference.** Inner frame geometry, aluminum skin approach (forming bucks + K&S sheet), TPU flexure hinges, swappable panel attachment standard. Study the construction logic before modeling. |
 | **1:10 RC E30 Drift Car** — full RC car with cabriolet body | [youmagine.com](https://youmagine.com/designs/86fa803e-46ad-40c4-a6eb-54f078b35f61) | Paid. 139 STL files. E30 cabriolet body (13 parts: windshield, fenders, mirrors, windows, rear end), roll cage, decorative engine, front MacPherson suspension. Body part breakdown is the closest reference to the E36 cabriolet approach. Chassis ignored — keeping D10. |
 | **BMW E36 Cabrio 1994 Printable Car** — body geometry source | [youmagine.com](https://youmagine.com/designs/f5554169-77c1-4480-853f-adf31664147a) | Paid. 1:30 scale — scale ×3 to reach 1:10. Has interior. Body geometry starting point for the custom build. |
 
@@ -232,7 +236,8 @@ Blender handles organic surface modeling. Fusion 360 handles everything that req
 
 **Where thickness is added:**
 - Body panel surfaces (TPU fenders, bumpers, cabriolet structure): apply Blender **Solidify modifier** before exporting OBJ. Fusion 360's "Thicken" command only works on B-Rep surface bodies — Blender OBJs import as mesh bodies and cannot be Thickened natively. Solidify in Blender, export as a solid mesh, Fusion receives it that way.
-- Forming bucks (molds for aluminum panels): apply Solidify in Blender, export as STL, send directly to print service. No Fusion treatment needed — bucks have no precision features.
+- Forming bucks (molds for aluminum panels): the buck *shape* doesn't need precision — it just needs to give the aluminum its contour. But the **attachment point locations do**. Model the panel attachment holes, clip notches, or mounting stubs into the forming buck at the correct Fusion-derived positions (as shallow through-holes or surface nubs). The buck then doubles as a drilling/marking template: after pressing the aluminum over the buck, mark through the buck holes into the aluminum before removing the sheet. This means bucks still need to go through the Fusion assembly to get the right attachment positions — export from Fusion as STL, not directly from Blender.
+- Same applies to printed panels (TPU fenders, bumpers): all locating pins, clip tabs, and mount holes must be placed precisely relative to the inner frame attachment standard. Printed panels with imprecise attachment geometry won't be interchangeable.
 - Inner frame: model **entirely in Fusion 360**, not Blender. The inner frame is mostly geometric (rectangular tubes, flat tabs, mount bosses) — model it parametrically in Fusion from the start so the attachment standard is fully native. Import the Blender body panel meshes around it as reference.
 - Clear parts (windshield, lenses): model the full solid geometry in Fusion 360 (not Blender); these require sub-millimeter accuracy for the step shelf, pins, and holes.
 
