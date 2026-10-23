@@ -70,6 +70,12 @@ wireviz rc-popstar/harnesses/*.wv -o rc-popstar/output/
 
 ---
 
+## Reference videos
+
+- [HPI Stage-D10 RTR assembly walkthrough](https://www.youtube.com/watch?v=9z_D0T3XxoQ) — RTR variant, but chassis is identical to the Creator Edition Kit. Covers mechanical assembly (shocks, steering linkage, diffs, motor positioning). Electronics install differs (RTR comes pre-wired); use the wiring docs in this repo for that portion.
+
+---
+
 ## Related
 
 - [e36-wiring](https://github.com/wesleyxcooper/e36-wiring) — full-size E36 Pop Star wiring (MaxxECU · ZF 8HP70 · Gauge.S cluster)
