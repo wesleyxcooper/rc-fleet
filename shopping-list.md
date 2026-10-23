@@ -31,6 +31,7 @@ lowest-risk starting point; swap components as you develop preferences.
 | **Gyro** — HPI D-Box3 Lite | HPI161068 | Entry gyro from HPI, fits D10 mounting bracket. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-lite-drift-gyro-hpi161068/p1853234) · ask RC Car World in-store | **$29.99** |
 | **Gyro (upgrade)** — Yokomo DP-302 V4 | YOKDPP-302V4B | Better gyro when ready to move up. [AMain](https://www.amainhobbies.com/yokomo-dp302-v4-drift-steering-gyro-yokdpp-302v4b/p868616) · [RC Car World](https://rccarworld.com/product/drift-steering-gyro/) | **$75.99** |
 | **D-Box3 Pro** (alt to DP-302 V4) | HPI161069 | Mid-tier HPI gyro. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-pro-drift-gyro-hpi161069/p1853235) · ask RC Car World in-store | **$36.99** |
+| **Sensor cable** — MST Brushless Sensor Cable (400mm) | MXS-841016-1 | Required to connect sensored motor to XD10 Pro ESC. Not included with either unit (confirmed via AMain product pages). [AMain](https://www.amainhobbies.com/mst-brushless-sensor-cable-400mm-flat-mxs-841016-1/p1627840) ⚠️ Back Order | **$7.99** |
 | **Radio** — Radiolink RC6GS V3 + R7FG receiver | — | 7-channel surface radio; R7FG has built-in gyro. Buy once, use for both cars. [Amazon](https://www.amazon.com/dp/B09Y8H434N) | **$74.99** |
 | **Battery** — Gens Ace Redline 2.0 2S LiHV Shorty (7.6V/4200mAh) | GEA42002S14D5 | Shorty fits the D10 tray. XT60 connector. [AMain](https://www.amainhobbies.com/gens-ace-redline-2.0-2s-shorty-lihv-battery-140c-7.6v-4200mah-w-5mm-bullets-gea42002s14d5/p1556141) | **$49.99** |
 | **Battery (alt)** — ProTek RC 2S LCG Stock Spec Shorty (7.4V/4800mAh) | PTK-5147-26 | [AMain](https://www.amainhobbies.com/protek-rc-2s-150c-low-ir-sig-stock-spec-lcg-shorty-lipo-battery-ptk-5147-26/p1674360) | **$59.99** |
@@ -185,7 +186,8 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Pinion | (estimate) | ~$7.00 |
 | LED system | Killerbody 48102 + N52 magnets + resistors | ~$27 |
 | FPV system | RunCam RC Cadet + EV800D goggles + regulator | ~$90 |
-| **Phase 1 Total** | | **~$936** |
+| Sensor cable | MST Brushless Sensor Cable (400mm) | $7.99 |
+| **Phase 1 Total** | | **~$944** |
 
 **Phase 2 (custom body, after first month of driving):**
 
@@ -286,10 +288,10 @@ second Radiolink receiver to it and use ONE transmitter for both cars. This save
 
 | | Verified/est. |
 |---|---|
-| Stage-D10 build | **~$744** |
+| Stage-D10 build | **~$752** |
 | RS4 3 Drift (used runner) | $150–300 (target $150–200) |
 | RS4 3 running supplies | **~$60** (fuel qt + starter set + 2× plugs) |
-| **All-in** | **~$955–1,100** |
+| **All-in** | **~$963–1,108** |
 
 Radio and charger are in the D10 budget and shared with the RS4 3. RS4 3 supplies based on
 one quart of fuel ($14.75) + starter set ($32.99) + two glow plugs ($23.98).
@@ -305,6 +307,7 @@ one quart of fuel ($14.75) + starter set ($32.99) + two glow plugs ($23.98).
 | Yokomo DRC/DRA tires | ⚠️ Not listed at RC Car World online; DRC (carpet) and DRA (asphalt) available at AMain. RC Car World stocks DRPA (P-Tile) — confirm their track surface before ordering. |
 | HPI FLX-D10 motor (HPI161066) | Not listed at RC Car World online — ask in-store (authorized HPI dealer) |
 | HPI D-Box3 gyros (HPI161068/161069) | Not listed at RC Car World online — ask in-store |
+| MST Sensor Cable (MXS-841016-1) | ⚠️ Back Order at AMain — check RC Car World or order early |
 
 ---
 
