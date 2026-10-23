@@ -43,9 +43,9 @@ lowest-risk starting point; swap components as you develop preferences.
 
 | Item | Part # | Where | Price |
 |---|---|---|---|
-| **Body — Phase 1** — 24K RC Technology E36 M3 (TAF21000, 260mm) | TAF21000 | Officially licensed E36 M3. Multi-piece accessory ecosystem sold separately (see Body Plan). Set chassis to 260mm before drilling body posts. [AMain](https://www.amainhobbies.com/24k-rc-technology-1-10-bmw-e36-m3-drift-body-clear-260mm-wheelbase-taf21000/p1658357) · [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) | **$109.99** |
+| **Body — Phase 1** — 24K RC Technology E36 M3 (TAF21000, 260mm) | TAF21000 | Officially licensed E36 M3. Multi-piece accessory ecosystem sold separately (see Body Plan). Set chassis to 260mm before fitting. [AMain](https://www.amainhobbies.com/24k-rc-technology-1-10-bmw-e36-m3-drift-body-clear-260mm-wheelbase-taf21000/p1658357) · [rc-arlos.com](https://rc-arlos.com/24k-rc-technology-en-gb/) | **$109.99** |
 | **Body — Phase 2** — custom E36 cabriolet (3D printed, see below) | — | Design in Blender, print in TPU after first month of driving. | material cost only |
-| **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | Chassis-side N52 cone magnets + hardware for snap-on body attachment without body clip holes. Required for Phase 2 body (model 4 catch points into the TPU body underside). [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
+| **Magnetic body mount** — HPI Universal Magnetic Body Mount Set (4pcs) | HPI161055 | N52 cone magnets (onto chassis body posts) + magnet catch washers (tape to inside of body at post locations) = hole-free snap-on attachment. Works for both the Phase 1 lexan body and the Phase 2 TPU body. Includes adaptors for bodies with existing holes. Confirmed via HPI product page. [Hobby Recreation Products](https://www.hobbyrecreationproducts.com/products/hpi161055-universal-magnetic-body-mount) | **$25.19** |
 | **Wheels** — 26mm touring car offset, 190mm width | — | Standard 1/10 touring offset; confirm hex fitment with D10 | ~$20–30 (not yet verified) |
 | **Drift tires (primary)** — Yokomo DRPA (P-Tile, 4-pack) | YOKZR-DRPA | RC Car World track surface. Stock up on these. [RC Car World](https://rccarworld.com/product/yokomo-drpa-competition-drift-tire-4-for-p-tile/) | **$19.00** |
 | **Drift tires (alt)** — Yokomo DRA (asphalt, 4-pack) | YOKZR-DRAA | For outdoor asphalt sessions. Buy when you move outdoors. [AMain](https://www.amainhobbies.com/yokomo-dra-competition-drift-tire-4-for-asphalt-surface-yokzr-draa/p682052) | **$15.75** |
@@ -187,15 +187,15 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | LED system | Killerbody 48102 + N52 magnets + resistors | ~$27 |
 | FPV system | RunCam RC Cadet + EV800D goggles + regulator | ~$90 |
 | Sensor cable | MST Brushless Sensor Cable (400mm) | $7.99 |
-| **Phase 1 Total** | | **~$944** |
+| Magnetic body mount | HPI 161055 Universal Magnetic Body Mount Set | $25.19 |
+| **Phase 1 Total** | | **~$969** |
 
 **Phase 2 (custom body, after first month of driving):**
 
 | Category | Item | Price |
 |---|---|---|
 | Body | Custom TPU E36 cabriolet | material cost only |
-| Magnetic body mount | HPI 161055 Universal Magnetic Body Mount Set | $25.19 |
-| **Phase 2 additions** | | **~$25 + filament** |
+| **Phase 2 additions** | | **filament only** |
 
 **Phase 3 (carbon chassis, when ready to compete):**
 
@@ -288,10 +288,10 @@ second Radiolink receiver to it and use ONE transmitter for both cars. This save
 
 | | Verified/est. |
 |---|---|
-| Stage-D10 build | **~$752** |
+| Stage-D10 build | **~$777** |
 | RS4 3 Drift (used runner) | $150–300 (target $150–200) |
 | RS4 3 running supplies | **~$60** (fuel qt + starter set + 2× plugs) |
-| **All-in** | **~$963–1,108** |
+| **All-in** | **~$988–1,133** |
 
 Radio and charger are in the D10 budget and shared with the RS4 3. RS4 3 supplies based on
 one quart of fuel ($14.75) + starter set ($32.99) + two glow plugs ($23.98).
