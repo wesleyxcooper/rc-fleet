@@ -13,6 +13,10 @@ Each variant also has a corresponding WireViz `.wv` file in `harnesses/`.
 
 ## Decision 1 — Gyro
 
+**Decision: Yokomo DP-302 V4 (primary). HPI D-Box3 Lite is the backup if the Yokomo is unavailable (D-Box3 Pro if the Lite is also out).**
+Beginner use: set SW1 to ASSIST and run HARD gain at first; move toward NOR and SOFT (suited to tile/carpet) as technique develops. Mount flat, label up, away from the motor/fan and servo — vibration can trigger an error LED at power-on.
+Sources: [Yokomo product page](https://global.teamyokomo.com/products/dpp-302v4b) · [HPI D10 user guide](https://www.hpiracing.com/assets/documents/manuals/stage_d10/161002_006_ug_stage_d10_en.pdf).
+
 ```mermaid
 flowchart TD
     A[Choose gyro] --> B[HPI D-Box3 Lite\n161068 — $29.99 AMain]
@@ -118,7 +122,7 @@ as final.
 
 ## Full channel map by variant
 
-### Variant A — D-Box3 Lite + KB48102 (current default, `led-controller.wv`)
+### Variant A — D-Box3 Lite + KB48102 (backup, `led-controller.wv`)
 
 | CH | Control on TX | Device on RX | Notes |
 |---|---|---|---|
@@ -135,7 +139,9 @@ as final.
 Same as A. D-Box3 Pro adds PCA and AGS dials (hardware, no extra channel needed).
 CH4 optional for remote gain — same as Lite.
 
-### Variant C — Yokomo DP-302 V4 + KB48102 (`gyro-yokomo-dp302v4.wv`)
+### Variant C — Yokomo DP-302 V4 + KB48102 (primary, `gyro-yokomo-dp302v4.wv`)
+
+Gain control: the standard route for drift gyros is gain on CH3 from a transmitter dial ([YAW](https://yawzine.com/en/rc-drift-gyro-setup-gain)). On the RC6GS V3, set the GYRO menu MODE to STD to free CH3/VR knob ([Radiolink FAQ](https://www.radiolink.com.cn/en/rc4gs_faq)), keep the R7FG gyro off, and use CH3 for the DP-302 V4 gain. The CH7/S.BUS gain route below is unverified; bench-test before relying on it.
 
 | CH | Control on TX | Device on RX | Notes |
 |---|---|---|---|
@@ -188,7 +194,7 @@ XD10 Pro BEC is rated 5A continuous — 4.2A headroom. No concern.
 
 ## Open items before first run
 
-- [ ] Pick gyro variant (see Decision 1 above)
+- [x] Pick gyro variant: Yokomo DP-302 V4 primary, D-Box3 Lite backup (see Decision 1 above)
 - [ ] Decide FPV: install analog system now, or defer to Phase 2 body (see Decision 5)
 - [ ] Set XD10 Pro BEC voltage (item 1G) and record the value
 - [ ] Bench-test KB48102 port output voltage/current (see Decision 4 note)

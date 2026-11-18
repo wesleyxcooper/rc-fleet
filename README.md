@@ -50,11 +50,11 @@ Wiring is documented in [WireViz](https://github.com/wireviz/WireViz) format —
 
 | Harness | Diagram | Description |
 |---|---|---|
-| LED controller (D-Box3 Lite default) | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/led-controller.html) | XD10 Pro BEC → KB48102 CH1/CH2 Y-cables → port outputs |
+| LED controller (backup D-Box3 Lite wiring) | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/led-controller.html) | XD10 Pro BEC → KB48102 CH1/CH2 Y-cables → port outputs |
 | Chassis harness | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/chassis-harness.html) | KB48102 port outputs → 4× chassis-side magnetic contacts |
 | Body harness | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/body-harness.html) | Magnetic contacts → LED headlight + tail assemblies |
 | Gyro variant: D-Box3 Pro | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/gyro-dbox3-pro.html) | Adds PCA + AGS dials vs Lite |
-| Gyro variant: Yokomo DP-302 V4 | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/gyro-yokomo-dp302v4.html) | 4 modes, S.BUS dual gain via CH7 |
+| Gyro variant: Yokomo DP-302 V4 (primary) | [view](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/rc-fleet/blob/main/rc-popstar/output/gyro-yokomo-dp302v4.html) | 4 modes, S.BUS dual gain via CH7 |
 
 Build decision tree (gyro choice, LED delivery, BEC voltage vs resistor values): [`rc-popstar/docs/build-decisions.md`](rc-popstar/docs/build-decisions.md)
 

@@ -92,7 +92,7 @@ See **[`docs/build-decisions.md`](docs/build-decisions.md)** for the full decisi
 
 Click any link to view the interactive diagram with full BOM in your browser.
 
-### System harness (default build: D-Box3 Lite gyro)
+### System harness (base wiring shown with backup D-Box3 Lite gyro; primary build uses the Yokomo DP-302 V4 variant below)
 
 | Harness | Interactive HTML | Source |
 |---|---|---|
@@ -172,9 +172,9 @@ in the file assume 5V BEC. Set XD10 Pro BEC voltage (item 1G) first, then verify
 | Hobbywing XD10 Pro | Sensored brushless ESC, BEC 5–7.4V | AMain, $159.99 |
 | Radiolink RC6GS V3 | 7-channel transmitter | Amazon, $74.99 |
 | Radiolink R7FG | 7ch receiver, PWM/PPM/SBUS, built-in gyro (leave OFF) | Included with RC6GS V3 |
-| HPI D-Box3 Lite (161068) | Drift gyro, GAIN dial, CH1+CH4 | AMain, $29.99 |
-| HPI D-Box3 Pro (161069) | Drift gyro, adds PCA+AGS dials, CH1+CH4 | AMain, $36.99 |
-| Yokomo DP-302 V4 | Drift gyro, 4 modes, S.BUS gain, CH1+CH7 | AMain, $75.99 |
+| HPI D-Box3 Lite (161068) | Backup gyro, GAIN dial, CH1+CH4 | AMain, $29.99 |
+| HPI D-Box3 Pro (161069) | Backup gyro, adds PCA+AGS dials, CH1+CH4 | AMain, $36.99 |
+| Yokomo DP-302 V4 | Primary drift gyro, 4 modes, CH1 + gain on CH3 (S.BUS CH7 unverified) | AMain, $75.99 |
 | Killerbody 48102 | LED control box, 12× 5mm LEDs (white/red/yellow/blue) | AMain, ~$17 |
 | N52 NdFeB disc 6mm × 3mm | Satellite magnet contacts (8 required) | K&J Magnetics D62 or equiv |
 | 5mm warm white LED | Headlight assemblies (FL, FR) | Killerbody kit or supplement |

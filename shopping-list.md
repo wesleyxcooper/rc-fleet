@@ -28,9 +28,9 @@ lowest-risk starting point; swap components as you develop preferences.
 | **Motor** — HPI FLX-D10-3650 10.5T Sensored | HPI161066 | Matched to the Flux ESC; 10.5T is standard drift motor class. [AMain](https://www.amainhobbies.com/hpi-staged10-flux-flxd103650-sensored-brushless-motor-10.5t-hpi161066/p1853233) · ask RC Car World in-store (authorized HPI dealer; not listed separately online) | **$52.46** |
 | **ESC** — Hobbywing Xerun XD10 Pro | HWA30112614 (Black) | Drift-specific firmware, 100A continuous, OTA programmable. Better long-term than HPI Flux ESC. [AMain](https://www.amainhobbies.com/hobbywing-xerun-xd10-pro-drift-spec-brushless-speed-controller-black-hwa30112614/p1359514) · [RC Car World](https://rccarworld.com/product/xerun-xd10-pro-esc-drift-racing-stealth-edition-black/) | **$159.99** |
 | **Servo** — HPI SX-12MGLP | HPI161067 | 12kg metal gear, 7.4V, low profile. Same unit that ships in the Flux RTR. | ⚠️ Not found at US online retailers — call RC Car World |
-| **Gyro** — HPI D-Box3 Lite | HPI161068 | Entry gyro from HPI, fits D10 mounting bracket. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-lite-drift-gyro-hpi161068/p1853234) · ask RC Car World in-store | **$29.99** |
-| **Gyro (upgrade)** — Yokomo DP-302 V4 | YOKDPP-302V4B | Better gyro when ready to move up. [AMain](https://www.amainhobbies.com/yokomo-dp302-v4-drift-steering-gyro-yokdpp-302v4b/p868616) · [RC Car World](https://rccarworld.com/product/drift-steering-gyro/) | **$75.99** |
-| **D-Box3 Pro** (alt to DP-302 V4) | HPI161069 | Mid-tier HPI gyro. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-pro-drift-gyro-hpi161069/p1853235) · ask RC Car World in-store | **$36.99** |
+| **Gyro** — Yokomo DP-302 V4 | YOKDPP-302V4B | Primary gyro. Start in ASSIST mode with HARD gain, move toward NOR/SOFT (suits P-tile) as technique develops. Keep away from motor/fan vibration. [AMain](https://www.amainhobbies.com/yokomo-dp302-v4-drift-steering-gyro-yokdpp-302v4b/p868616) · [RC Car World](https://rccarworld.com/product/drift-steering-gyro/) · [Yokomo global](https://global.teamyokomo.com/products/dpp-302v4b) | **$75.99** |
+| **Gyro (backup)** — HPI D-Box3 Lite | HPI161068 | Use if the DP-302 V4 is unavailable. Fits D10 mounting bracket. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-lite-drift-gyro-hpi161068/p1853234) · ask RC Car World in-store | **$29.99** |
+| **D-Box3 Pro** (backup alt) | HPI161069 | Backup if the Lite is also unavailable; adds PCA + AGS dials. [AMain](https://www.amainhobbies.com/hpi-staged10-d-box3-pro-drift-gyro-hpi161069/p1853235) · ask RC Car World in-store | **$36.99** |
 | **Sensor cable** — MST Brushless Sensor Cable (400mm) | MXS-841016-1 | Required to connect sensored motor to XD10 Pro ESC. Not included with either unit (confirmed via AMain product pages). [AMain](https://www.amainhobbies.com/mst-brushless-sensor-cable-400mm-flat-mxs-841016-1/p1627840) ⚠️ Back Order | **$7.99** |
 | **Radio** — Radiolink RC6GS V3 + R7FG receiver | — | 7-channel surface radio; R7FG has built-in gyro. Buy once, use for both cars. [Amazon](https://www.amazon.com/dp/B09Y8H434N) | **$74.99** |
 | **Battery** — Gens Ace Redline 2.0 2S LiHV Shorty (7.6V/4200mAh) | GEA42002S14D5 | Shorty fits the D10 tray. XT60 connector. [AMain](https://www.amainhobbies.com/gens-ace-redline-2.0-2s-shorty-lihv-battery-140c-7.6v-4200mah-w-5mm-bullets-gea42002s14d5/p1556141) | **$49.99** |
@@ -175,7 +175,7 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Motor | HPI FLX-D10 10.5T | $52.46 |
 | ESC | Hobbywing XD10 Pro | $159.99 |
 | Servo | HPI SX-12MGLP (call RC Car World) | ~$55 |
-| Gyro | HPI D-Box3 Lite (starter) | $29.99 |
+| Gyro | Yokomo DP-302 V4 (backup: HPI D-Box3 Lite, $29.99) | $75.99 |
 | Radio + RX | Radiolink RC6GS V3 + R7FG | $74.99 |
 | Battery | Gens Ace 2S LiHV 4200mAh | $49.99 |
 | Charger | Dual 10A LiPo balance charger | $68.99 |
@@ -188,7 +188,7 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | FPV system | RunCam RC Cadet + EV800D goggles + regulator | ~$90 |
 | Sensor cable | MST Brushless Sensor Cable (400mm) | $7.99 |
 | Magnetic body mount | HPI 161055 Universal Magnetic Body Mount Set | $25.19 |
-| **Phase 1 Total** | | **~$969** |
+| **Phase 1 Total** | | **~$1,015** |
 
 **Phase 2 (custom body, after first month of driving):**
 
@@ -204,7 +204,7 @@ Using verified prices where available. Servo estimated at $55 (HPI native, RC Ca
 | Carbon chassis | Bingo Wasp Stage D10 | $98.00 |
 | **Phase 3 additions** | | **$98** |
 
-Swap D-Box3 Lite → Yokomo DP-302 V4 ($75.99) adds $46. Phase 3 carbon chassis swap is done at the same time the custom body goes on — one teardown instead of two.
+Falling back to the D-Box3 Lite ($29.99) instead of the DP-302 V4 saves $46. Phase 3 carbon chassis swap is done at the same time the custom body goes on — one teardown instead of two.
 
 ---
 
